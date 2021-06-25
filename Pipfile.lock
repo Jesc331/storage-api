@@ -103,12 +103,12 @@
         },
         "dropbox": {
             "hashes": [
-                "sha256:02d74325334ff029ccb0015da4d5f5bc2fa4900d35e6ee0fc0d975b51d4def87",
-                "sha256:14dd51e0e3981cb81384a8e13a308de0df13c7c4b6ba7f080177ede947761cbb",
-                "sha256:673872a67cd5fdb40a9875ba3b5a99d0058fe829715e5fae36b469571f59eda8"
+                "sha256:27e70bae5082ca96938ea02ac03b9e1d4accf794a5d1632d8168b6835eff70c1",
+                "sha256:526b66385f6ade173eda37c1f23d64b6f2f39dda00287d8287dd2bf04a8de02f",
+                "sha256:bd024f9f4d90d2c9e1f62f09f3cda46ca3799d33258cfcb8ec02cf112db1f217"
             ],
             "index": "pypi",
-            "version": "==11.11.0"
+            "version": "==11.12.0"
         },
         "google-api-core": {
             "hashes": [
@@ -308,7 +308,7 @@
                 "sha256:c203ec8783bf771a155b207279b9bccb8dea02d8f0c9e5f8ead507bc3246ecc1",
                 "sha256:ef9d7589ef3c200abe66653d3f1ab1033c3c419ae9b9bdb1240a85b024efc88b"
             ],
-            "markers": "python_version >= '2.6' and python_version not in '3.0, 3.1, 3.2, 3.3'",
+            "markers": "python_version >= '2.6' and python_version not in '3.0, 3.1, 3.2'",
             "version": "==2.4.7"
         },
         "pytz": {
@@ -339,7 +339,7 @@
                 "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926",
                 "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"
             ],
-            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2'",
             "version": "==1.16.0"
         },
         "stone": {
