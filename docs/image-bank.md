@@ -9,14 +9,9 @@ El usuario debera de crear un usuario para usar la API, ya que el nombre del usu
 
 Archivos relacionados a este proceso:
 
-|------------------------ | --------------------------------------------------- |
 | Path                    | Descripción                                         |
 | ----------------------- | --------------------------------------------------- |
-|                         | Sera el archivo encargado de recibir la informacion |
-| /auth/login.py          | y compararlo en la validacion para que el usuario   |
-|                         | pueda acceder a la API                              |
-| ----------------------- | --------------------------------------------------- |
-| ----------------------- | --------------------------------------------------- |
+| /auth/login.py          | Sera el archivo encargado de recibir la informacion y compararlo en la validacion para que el usuario pueda acceder a la API                           |
 |                         | Se almacenara la informacion de los usuarios en un  |
 | /auth/user_storage.json | json con la siguiente estructura:                   |
 |                         | {"user": "exampleName","password":"examplePass"     |
