@@ -14,7 +14,6 @@ Archivos relacionados a este proceso:
 | /auth/login.py          | Sera el archivo encargado de recibir la informacion y compararlo en la validacion para que el usuario pueda acceder a la API                           |
 | /auth/user_storage.json | Se almacenara la informacion de los usuarios en un json con la siguiente estructura: {"user": "exampleName","password":"examplePass" (se requiere que este archivo este cifrado.)    |
 | /auth/validate_user.py  | Este archivo ejecutara una validacion de los datos recibidos del archivo "login.py" para dar el acceso a usuarios registrados o denegar el acceso usuarios no registrados en su contraparte |
-| ----------------------- | --------------------------------------------------- |
 
 ## API
 
