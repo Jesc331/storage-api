@@ -8,9 +8,26 @@ Este proyecto almacena archivos con algun formato de imagen permitido(PNG, JPG, 
 El usuario debera de crear un usuario para usar la API, ya que el nombre del usuario registrado tambien servira como etiqueta para buscar imagenes de alguna persona en particular y almacenar las imagenes correspondientes.
 
 Archivos relacionados a este proceso:
-- /auth/login
-- /auth/user_storage
-- /auth/validate_user
+
+|------------------------ | --------------------------------------------------- |
+| Path                    | Descripción                                         |
+| ----------------------- | --------------------------------------------------- |
+|                         | Sera el archivo encargado de recibir la informacion |
+| /auth/login.py          | y compararlo en la validacion para que el usuario   |
+|                         | pueda acceder a la API                              |
+| ----------------------- | --------------------------------------------------- |
+| ----------------------- | --------------------------------------------------- |
+|                         | Se almacenara la informacion de los usuarios en un  |
+| /auth/user_storage.json | json con la siguiente estructura:                   |
+|                         | {"user": "exampleName","password":"examplePass"     |
+|                         | se requiere que este archivo este cifrado.          |
+| ----------------------- | --------------------------------------------------- |
+| ----------------------- | --------------------------------------------------- |
+|                         | Este archivo ejecutara una validacion de los datos  |
+| /auth/validate_user.py  | recibidos del archivo "login.py" para dar el acceso |
+|                         | a usuarios registrados o denegar el acceso          |
+|                         | usuarios no registrados en su contraparte           |
+| ----------------------- | --------------------------------------------------- |
 
 ## API
 
