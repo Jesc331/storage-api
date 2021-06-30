@@ -6,7 +6,7 @@ Este proyecto almacena archivos con algun formato de imagen permitido(PNG, JPG, 
 # Estrucutra deseada
 Se debera de crear un banco de imagenes, lo cual debemos de pensar que entidades *necesitaremos*:
 
-- Usuario (nickname, user, password)
+- Usuario (user, password)
 - Imagen (categoria, identificador, path)
 
 ---
@@ -25,7 +25,23 @@ Archivos relacionados a este proceso:
 
 # Procesos dentro de la API
 ## Registro de Usuaurio
-- Se
+- Se solicitara un usuario, una contraseña y un correo
+- Se le pedira confirmar su contraseña
+
+## Subir una imagen
+- Se le pedira que inicie sesion(ingresar con su usuario y contraseña previamente registrado)
+- Se le pedira seleccionar el archivo que desea subir (debe de cumplir con los siguientes formatos: JPEG, JPG, GIF o PNG)
+- Subir archivo y esperar la confirmacion
+
+Archivos relacionados a este proceso:
+
+| Path                    | Descripción                                         |
+| ----------------------- | --------------------------------------------------- |
+| `/auth/login`         | Sera el archivo encargado de **recibir la informacion y compararlo en la validacion para que el usuario pueda acceder a la API**                           |
+| `/main/upload` | Se presentara una interfaz con un formato que sera rellanado con la siguiente informacion ** *Nombre del Archivo*(sera extraido del documento que seleccione el usuario), *PATH*(se extraera del archivo seleccionado), *Categoria*(El usuario debera seleccionar las distintas opciones de un 'ComboBox' )**   |
+| `/auth/validate_user`  | Este archivo **ejecutara una validacion de los datos recibidos del archivo "login.py"** para dar el acceso a usuarios registrados o denegar el acceso usuarios no registrados en su contraparte |
+
+##
 
 ## API
 
