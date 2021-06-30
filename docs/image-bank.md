@@ -3,7 +3,7 @@
 
 Este proyecto almacena archivos con algun formato de imagen permitido(PNG, JPG, JPEG, GIF) subidas por el usuario, y consultar la las imagenes por su etiqueta que los usuarios añadiran al momento de subir sus archivos.
 
-# Estrucutra deseada
+# Estructura deseada
 Se debera de crear un banco de imagenes, lo cual debemos de pensar que entidades *necesitaremos*:
 
 - Usuario (user, password)
