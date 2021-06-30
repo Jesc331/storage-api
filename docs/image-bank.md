@@ -3,6 +3,14 @@
 
 Este proyecto almacena archivos con algun formato de imagen permitido(PNG, JPG, JPEG, GIF) subidas por el usuario, y consultar la las imagenes por su etiqueta que los usuarios añadiran al momento de subir sus archivos.
 
+# Estrucutra deseada
+Se debera de crear un banco de imagenes, lo cual debemos de pensar que entidades *necesitaremos*:
+
+- Usuario (nickname, user, password)
+- Imagen (categoria, identificador, path)
+
+---
+
 ## Modo de uso
 
 El usuario debera de crear un usuario para usar la API, ya que el nombre del usuario registrado tambien servira como etiqueta para buscar imagenes de alguna persona en particular y almacenar las imagenes correspondientes.
@@ -12,16 +20,20 @@ Archivos relacionados a este proceso:
 | Path                    | Descripción                                         |
 | ----------------------- | --------------------------------------------------- |
 | `/auth/login`         | Sera el archivo encargado de **recibir la informacion y compararlo en la validacion para que el usuario pueda acceder a la API**                           |
-| `/auth/user_storage.json` | Se almacenara la informacion de los usuarios en un json con la **siguiente estructura: {"user": "exampleName","password":"examplePass" (se requiere que este archivo este cifrado.)**   |
-| `/auth/validate_user.py`  | Este archivo **ejecutara una validacion de los datos recibidos del archivo "login.py"** para dar el acceso a usuarios registrados o denegar el acceso usuarios no registrados en su contraparte |
+| `/auth/user_storage` | Se almacenara la informacion de los usuarios en un json con la **siguiente estructura: ```{"user": "exampleName","password":"examplePass"``` (se requiere que este archivo este cifrado.)**   |
+| `/auth/validate_user`  | Este archivo **ejecutara una validacion de los datos recibidos del archivo "login.py"** para dar el acceso a usuarios registrados o denegar el acceso usuarios no registrados en su contraparte |
+
+# Procesos dentro de la API
+## Registro de Usuaurio
+- Se
 
 ## API
 
 | Path                  | Descripción |
 | --------------------- | ----------- |
 | /bankImg/store        |             |
-| /bankImg/info/<id>       |             |
-| /bankImg/void            |             |
+| /bankImg/info/<id>    |             |
+| /bankImg/void         |             |
 
 
 # Archivos Relacionados
