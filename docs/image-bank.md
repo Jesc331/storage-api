@@ -31,9 +31,9 @@ Archivos relacionados a este proceso:
  ---
 
 ## Subir una imagen
-- Se le pedira que inicie sesion(ingresar con su usuario y contraseña previamente registrado)
-- Se le pedira seleccionar el archivo que desea subir (debe de cumplir con los siguientes formatos: JPEG, JPG, GIF o PNG)
-- Subir archivo y esperar la confirmacion
+1. Se le pedira que inicie sesion(ingresar con su usuario y contraseña previamente registrado)
+2. Se le pedira seleccionar el archivo que desea subir (debe de cumplir con los siguientes formatos: JPEG, JPG, GIF o PNG)
+3. Subir archivo y esperar la confirmacion
 
 Archivos relacionados a este proceso:
 
@@ -42,6 +42,21 @@ Archivos relacionados a este proceso:
 | `/auth/login`         | Sera el archivo encargado de **recibir la informacion y compararlo en la validacion para que el usuario pueda acceder a la API**                           |
 | `/main`  | Esta es la pagina de inicio donde se presentaran las imagenes que se han subido recientemente, una barra buscadora y un boton para subir nuestras imagenes que redirigira a la siguiente direccion '/main/upload' |
 | `/main/upload` | Se presentara una interfaz con un formato que sera rellanado con la siguiente informacion: *Nombre del Archivo*(sera extraido del documento que seleccione el usuario), *PATH*(se extraera del archivo seleccionado), *Categoria*(El usuario debera seleccionar las distintas opciones de un 'ComboBox' )   |
+
+## Borrar una imagen
+1. Se le pedira que inicie sesion(ingresar con su usuario y contraseña previamente registrado).
+2. Se le pedira seleccionar una de sus imagenes que el usuario haya subido con anterioridad.
+3. Se le preguntará que confirme que si **realmente quiere borrar la imagen seleccionada**.
+4. Se borrará la imagen seleccionada-
+
+Archivos relacionados a este proceso:
+
+| Path                    | Descripción                                         |
+| ----------------------- | --------------------------------------------------- |
+| `/auth/login`         | Sera el archivo encargado de **recibir la informacion y compararlo en la validacion para que el usuario pueda acceder a la API**                           |
+| `/main/profile`  | En esta pagina se desplegara una interfaz donde el usuario podra ver su 'nickname' y las imagenes que ha subido hasta el momento y un boton en la parte superior de la pagina que activara el evento para 'borrar imagenes' |
+| `/main/profile/delete` | Se le mostrara un 'ComboBox' de las imagenes que ha subido y seleccionara las que desea borrar luego tendra que cofirmar para borrar las imagenes.  |
+
 
 Acciones dentro de la API:
 
