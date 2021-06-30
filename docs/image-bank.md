@@ -45,9 +45,10 @@ Archivos relacionados a este proceso:
 
 Acciones dentro de la API:
 
-- Buscar imagenes por categoria
-- Buscar imagenes por nombre
-- Buscar imagenes por usuario
+- Buscar imagenes
+  -Por usuarios
+  -Por Categoria
+  -Por Nombre
 - Subir imagenes
 - Borrar imagenes
 
