@@ -8,7 +8,8 @@ Asi como los usuarios puedan borrar sus propias imagenes si asi lo desean, y pod
 Se debera de crear un banco de imagenes, lo cual debemos de pensar que entidades *necesitaremos*:
 
 - Usuario (user, password)
-- Imagen (categoria, user, path)
+- Image (name, file, owner, id, category, original_description)
+- Comment(id, image_id, user_id, description)
 - Reportes( user, status, message, category)
 
 ---
@@ -21,7 +22,6 @@ Se debera de crear un banco de imagenes, lo cual debemos de pensar que entidades
 
 # Acciones que puede realizar el usuario dentro de la API:
 
-- Registrarse como usuario
 - Buscar imagenes
   - Por usuarios
   - Por Categoria
