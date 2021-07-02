@@ -19,6 +19,17 @@ Se debera de crear un banco de imagenes, lo cual debemos de pensar que entidades
 - Borrar imagenes de otros usuarios
 - Fijar mensajes para los otros usuarios
 
+# Acciones que puede realizar el usuario dentro de la API:
+
+- Registrarse como usuario
+- Buscar imagenes
+  - Por usuarios
+  - Por Categoria
+  - Por Nombre
+- Subir imagenes
+- Borrar imagenes propias
+- Reportar imagenes inapropiadas
+
 ## Operaciones de Almacenamiento de datos
 
 ### Operaciones de usuarios
@@ -49,17 +60,6 @@ Atender reportes
 ## Modo de uso
 
 El usuario debera de crear un usuario para usar la API, ya que el nombre del usuario registrado tambien servira como etiqueta para buscar imagenes de alguna persona en particular y almacenar las imagenes correspondientes.
-
-# Acciones que puede realizar el usuario dentro de la API:
-
-- Registrarse como usuario
-- Buscar imagenes
-  - Por usuarios
-  - Por Categoria
-  - Por Nombre
-- Subir imagenes
-- Borrar imagenes propias
-- Reportar imagenes inapropiadas
 
 # Procesos dentro de la API
 ## Registro de Usuaurio
