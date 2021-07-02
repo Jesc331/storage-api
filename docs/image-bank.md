@@ -2,18 +2,64 @@
 ## Consiste en:
 
 Este proyecto almacena archivos con algun formato de imagen permitido(PNG, JPG, JPEG, GIF) subidas por el usuario, y consultar la las imagenes por su etiqueta que los usuarios añadiran al momento de subir sus archivos.
+Asi como los usuarios puedan borrar sus propias imagenes si asi lo desean, y poder tener un apartado de sus propias imagenes que han subido.
 
 # Estructura deseada
 Se debera de crear un banco de imagenes, lo cual debemos de pensar que entidades *necesitaremos*:
 
 - Usuario (user, password)
-- Imagen (categoria, identificador, path)
+- Imagen (categoria, user, path)
+- Reportes( user, status, message, category)
+
+---
+
+# Acciones que puede realizar el **administrador** de la API:
+- Visualizar los reportes
+- Cambiar los estados de los reportes(pediente o resuelto)
+- Borrar imagenes de otros usuarios
+- Fijar mensajes para los otros usuarios
+
+## Operaciones de Almacenamiento de datos
+
+### Operaciones de usuarios
+
+Subir una nueva imagen
+: solicitamos categoria, nombre y path.
+
+Actualizar de categorias
+: cambiar categorias ya establecidas o agregar más.
+
+Crear reportes
+: cambiar categoria
+: añadir mensajes
+
+### Operaciones de administrador
+
+Borrar imagenes
+: solicitar nombre de la imagen y usuario
+: borrar imagenes
+
+Atender reportes
+: solicitar estados del reporte y descripcion
+: cambiar estados de los reportes
+: añadir mensajes de retroalimentacion para el usuario
 
 ---
 
 ## Modo de uso
 
 El usuario debera de crear un usuario para usar la API, ya que el nombre del usuario registrado tambien servira como etiqueta para buscar imagenes de alguna persona en particular y almacenar las imagenes correspondientes.
+
+# Acciones que puede realizar el usuario dentro de la API:
+
+- Registrarse como usuario
+- Buscar imagenes
+  - Por usuarios
+  - Por Categoria
+  - Por Nombre
+- Subir imagenes
+- Borrar imagenes propias
+- Reportar imagenes inapropiadas
 
 # Procesos dentro de la API
 ## Registro de Usuaurio
@@ -34,6 +80,8 @@ Archivos relacionados a este proceso:
 1. Se le pedira que inicie sesion(ingresar con su usuario y contraseña previamente registrado)
 2. Se le pedira seleccionar el archivo que desea subir (debe de cumplir con los siguientes formatos: JPEG, JPG, GIF o PNG)
 3. Subir archivo y esperar la confirmacion
+
+---
 
 Archivos relacionados a este proceso:
 
@@ -57,23 +105,13 @@ Archivos relacionados a este proceso:
 | `/main/profile`  | En esta pagina se desplegara una interfaz donde el usuario podra ver su 'nickname' y las imagenes que ha subido hasta el momento y un boton en la parte superior de la pagina que activara el evento para 'borrar imagenes' |
 | `/main/profile/delete` | Se le mostrara un 'ComboBox' de las imagenes que ha subido y seleccionara las que desea borrar luego tendra que cofirmar para borrar las imagenes.  |
 
-
-Acciones dentro de la API:
-
-- Buscar imagenes
-  -Por usuarios
-  -Por Categoria
-  -Por Nombre
-- Subir imagenes
-- Borrar imagenes
-
 # Archivos Relacionados
 
- - `routes/dell-warranty.py`
+ -
 
 Prefijos de almacenamiento:
 
- - `dell-warranty/`
+ - `image-bank/`
 
 Tablas de Base de Datos
 
