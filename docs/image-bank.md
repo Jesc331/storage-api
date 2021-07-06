@@ -4,6 +4,10 @@
 Este proyecto almacena archivos con algun formato de imagen permitido(PNG, JPG, JPEG, GIF) subidas por el usuario, y consultar la las imagenes por su etiqueta que los usuarios añadiran al momento de subir sus archivos.
 Asi como los usuarios puedan borrar sus propias imagenes si asi lo desean, y poder tener un apartado de sus propias imagenes que han subido.
 
+## Aplicacion en:
+
+Podemos esperar que se aplique en alguna empresa que venda o comercialice productos para el uso publico en el cual se requiera saber la opinion acerca del producto para generar actualizacion o modificaciones al producto con el fin de mejorarlo.
+
 # Estructura deseada
 Se debera de crear un banco de imagenes, lo cual debemos de pensar que entidades *necesitaremos*:
 
