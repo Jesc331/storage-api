@@ -18,7 +18,7 @@ Se debera de crear un banco de imagenes, lo cual debemos de pensar que entidades
 
 <div>
 <p style = 'text-align:center;'>
-<img src="/Users/salas/Downloads/ERdeHockey.png" alt="JuveYell" width="300px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/ERdeHockey.png" alt="JuveYell" width="300px">
 </p>
 </div>
 
