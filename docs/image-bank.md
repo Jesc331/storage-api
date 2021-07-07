@@ -54,6 +54,15 @@ Se debera de crear un banco de imagenes, lo cual debemos de pensar que entidades
 - Eliminar sus reportes (`app:imageReports:read:all`)
 
  ---
+## Ruta relativa para los Archivos
+
+Se propone que se siga la siguiente estructura para los documentos para asi mismo contruir las rutas.
+
+<div>
+<p style = 'text-align:center;'>
+<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/Rutas%20HTTP.png" alt="RHTTP" width="640px">
+</p>
+</div>
 
 ## Modo de uso
 
@@ -85,7 +94,7 @@ Archivos relacionados a este proceso:
 | Path                    | Descripción                                         |
 | ----------------------- | --------------------------------------------------- |
 | `/auth/login`         | Sera el archivo encargado de **recibir la informacion y compararlo en la validacion para que el usuario pueda acceder a la API**                           |
-| `/main`  | Esta es la pagina de inicio donde se presentaran las imagenes que se han subido recientemente, una barra buscadora y un boton para subir nuestras imagenes que redirigira a la siguiente direccion '/main/upload' |
+| `/main/home`  | Esta es la pagina de inicio donde se presentaran las imagenes que se han subido recientemente, una barra buscadora y un boton para subir nuestras imagenes que redirigira a la siguiente direccion '/main/upload' |
 | `/main/upload` | Se presentara una interfaz con un formato que sera rellanado con la siguiente informacion: *Nombre del Archivo*(sera extraido del documento que seleccione el usuario), *PATH*(se extraera del archivo seleccionado), *Categoria*(El usuario debera seleccionar las distintas opciones de un 'ComboBox' )   |
 
 ---
@@ -101,7 +110,7 @@ Archivos relacionados a este proceso:
 | Path                    | Descripción                                         |
 | ----------------------- | --------------------------------------------------- |
 | `/auth/login`         | Sera el archivo encargado de **recibir la informacion y compararlo en la validacion para que el usuario pueda acceder a la API**                           |
-| `/main/profile`  | En esta pagina se desplegara una interfaz donde el usuario podra ver su 'nickname' y las imagenes que ha subido hasta el momento y un boton en la parte superior de la pagina que activara el evento para 'borrar imagenes' y otro mas para `crar reportes` |
+| `/main/profile/user_home`  | En esta pagina se desplegara una interfaz donde el usuario podra ver su 'nickname' y las imagenes que ha subido hasta el momento y un boton en la parte superior de la pagina que activara el evento para 'borrar imagenes' y otro mas para `crar reportes` |
 | `/main/profile/delete` | Se le mostrara un 'ComboBox' de las imagenes que ha subido y seleccionara las que desea borrar luego tendra que cofirmar para borrar las imagenes.  |
 
 ---
