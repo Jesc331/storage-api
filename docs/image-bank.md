@@ -38,7 +38,7 @@ Se debera de crear un banco de imagenes, lo cual debemos de pensar que entidades
   - por el usuario
 ---
 # Acciones que se pueden realizar en la API:
-## *administrador*
+## *Administrador*
 - Visualizar todos los reportes(`app:imageReports:read:all`)
 - Cambiar los estados de los reportes(`app:imageReports:update:all`)
 - Borrar reportes de los usuarios(`app:imageReports:delete:all`)
@@ -46,48 +46,24 @@ Se debera de crear un banco de imagenes, lo cual debemos de pensar que entidades
 - Solicitar imagenes de otros usuarios(`app:imageBank:read:all`)
 
 ## *Usuario*
-- Buscar sus imagenes y de otros usuarios ('app:imageBank:read:all')
-- Subir imagenes a su cuenta ('app:imageBank:write:self')
-- Actualizar descripciones de sus imagenes ('app:imageReports:update:self')
-- Eliminar imagenes de su cuenta ('app:imageBank:delete:self')
-- Reportar imagenes inapropiadas ('app:imageReports:write:self')
-- Eliminar sus reportes ('app:imageReports:read:all')
+- Buscar sus imagenes y de otros usuarios (`app:imageBank:read:all`)
+- Subir imagenes a su cuenta (`app:imageBank:write:self`)
+- Actualizar descripciones de sus imagenes (`app:imageReports:update:self`)
+- Eliminar imagenes de su cuenta (`app:imageBank:delete:self`)
+- Reportar imagenes inapropiadas (`app:imageReports:write:self`)
+- Eliminar sus reportes (`app:imageReports:read:all`)
 
-## Operaciones de Almacenamiento de datos
-
-### Operaciones de usuarios
-
-Subir una nueva imagen
-: solicitamos categoria, nombre y path.
-
-Actualizar de categorias
-: cambiar categorias ya establecidas o agregar más.
-
-Crear reportes
-: cambiar categoria
-: añadir mensajes
-
-### Operaciones de administrador
-
-Borrar imagenes
-: solicitar nombre de la imagen y usuario
-: borrar imagenes
-
-Atender reportes
-: solicitar estados del reporte y descripcion
-: cambiar estados de los reportes
-: añadir mensajes de retroalimentacion para el usuario
-
----
+ ---
 
 ## Modo de uso
 
 El usuario debera de crear un usuario para usar la API, ya que el nombre del usuario registrado tambien servira como etiqueta para buscar imagenes de alguna persona en particular y almacenar las imagenes correspondientes.
 
 # Procesos dentro de la API
+
 ## Registro de Usuaurio
-- Se solicitara un usuario, una contraseña y un correo
-- Se le pedira confirmar su contraseña
+1. Se solicitara un usuario, una contraseña
+2. Se le pedira confirmar su contraseña
 
 Archivos relacionados a este proceso:
 
@@ -114,6 +90,8 @@ Archivos relacionados a este proceso:
 | `/main`  | Esta es la pagina de inicio donde se presentaran las imagenes que se han subido recientemente, una barra buscadora y un boton para subir nuestras imagenes que redirigira a la siguiente direccion '/main/upload' |
 | `/main/upload` | Se presentara una interfaz con un formato que sera rellanado con la siguiente informacion: *Nombre del Archivo*(sera extraido del documento que seleccione el usuario), *PATH*(se extraera del archivo seleccionado), *Categoria*(El usuario debera seleccionar las distintas opciones de un 'ComboBox' )   |
 
+---
+
 ## Borrar una imagen
 1. Se le pedira que inicie sesion(ingresar con su usuario y contraseña previamente registrado).
 2. Se le pedira seleccionar una de sus imagenes que el usuario haya subido con anterioridad.
@@ -125,8 +103,24 @@ Archivos relacionados a este proceso:
 | Path                    | Descripción                                         |
 | ----------------------- | --------------------------------------------------- |
 | `/auth/login`         | Sera el archivo encargado de **recibir la informacion y compararlo en la validacion para que el usuario pueda acceder a la API**                           |
-| `/main/profile`  | En esta pagina se desplegara una interfaz donde el usuario podra ver su 'nickname' y las imagenes que ha subido hasta el momento y un boton en la parte superior de la pagina que activara el evento para 'borrar imagenes' |
+| `/main/profile`  | En esta pagina se desplegara una interfaz donde el usuario podra ver su 'nickname' y las imagenes que ha subido hasta el momento y un boton en la parte superior de la pagina que activara el evento para 'borrar imagenes' y otro mas para `crar reportes` |
 | `/main/profile/delete` | Se le mostrara un 'ComboBox' de las imagenes que ha subido y seleccionara las que desea borrar luego tendra que cofirmar para borrar las imagenes.  |
+
+---
+
+## Crear un reporte
+1. Se le pedira que inicie sesion(ingresar con su usuario y contraseña previamente registrado).
+2. Se le pedira dirigirse a su perfil donde podra ver un **boton** para crear reportes.
+3. Se desplegara un recuadro donde rellenara un formulario con los siguientes datos: **user, id_image y un mensaje acerca del problema**.
+4. Pulsar el **boton** de enviar y esperar respuesta del administrador
+
+Archivos relacionados a este proceso:
+
+| Path                    | Descripción                                         |
+| ----------------------- | --------------------------------------------------- |
+| `/auth/login`         | Sera el archivo encargado de **recibir la informacion y compararlo en la validacion para que el usuario pueda acceder a la API**                           |
+| `/main/profile`  | En esta pagina se desplegara una interfaz donde el usuario podra ver su 'nickname' y las imagenes que ha subido hasta el momento y un boton en la parte superior de la pagina que activara el evento para + ´borrar imagenes´ y otro mas para `crar reportes` |
+| `/main/profile/reportTools` | Se le mostrara un 'ComboBox' de las imagenes que ha subido y seleccionara las que desea borrar luego tendra que cofirmar para borrar las imagenes.  |
 
 # Archivos Relacionados
 
