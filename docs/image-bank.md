@@ -11,10 +11,16 @@ Podemos esperar que se aplique en alguna empresa que venda o comercialice produc
 # Estructura deseada
 Se debera de crear un banco de imagenes, lo cual debemos de pensar que entidades *necesitaremos*:
 
-- Usuario (user, password)
-- Image (name, file, owner, id, category, original_description)
-- Comment(id, image_id, user_id, description)
-- Reportes( user, status, message, category)
+- Usuario (user_id, user, password)
+- Image (name, file, owner, image_id, category, original_description)
+- Comment(id_comment, image_id, user_id, description)
+- Reporte( repor_id, user, status, message)
+
+<div>
+<p style = 'text-align:center;'>
+<img src="/Users/salas/Downloads/ERdeHockey.png" alt="JuveYell" width="300px">
+</p>
+</div>
 
 ---
 
