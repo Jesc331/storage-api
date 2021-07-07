@@ -23,7 +23,20 @@ Se debera de crear un banco de imagenes, lo cual debemos de pensar que entidades
 </div>
 
 ---
-
+# Consulta de Datos
+- Solicitar una imagen
+  - por el id de la imagen
+  - por el usuario
+  - por la categoria
+- solicitar reporte
+  - por el usuario
+  - por el id del reporte
+  - por el status
+- solicitar un cometario
+  - por el id del comentario
+  - por el id de la imagen
+  - por el usuario
+---
 # Acciones que puede realizar el **administrador** de la API:
 - Visualizar los reportes
 - Cambiar los estados de los reportes(pediente o resuelto)
