@@ -80,8 +80,6 @@ Archivos relacionados a este proceso:
 2. Se le pedira seleccionar el archivo que desea subir (debe de cumplir con los siguientes formatos: JPEG, JPG, GIF o PNG)
 3. Subir archivo y esperar la confirmacion
 
----
-
 Archivos relacionados a este proceso:
 
 | Path                    | Descripción                                         |
@@ -120,11 +118,9 @@ Archivos relacionados a este proceso:
 | ----------------------- | --------------------------------------------------- |
 | `/auth/login`         | Sera el archivo encargado de **recibir la informacion y compararlo en la validacion para que el usuario pueda acceder a la API**                           |
 | `/main/profile`  | En esta pagina se desplegara una interfaz donde el usuario podra ver su 'nickname' y las imagenes que ha subido hasta el momento y un boton en la parte superior de la pagina que activara el evento para + ´borrar imagenes´ y otro mas para `crar reportes` |
-| `/main/profile/reportTools` | Se le mostrara un 'ComboBox' de las imagenes que ha subido y seleccionara las que desea borrar luego tendra que cofirmar para borrar las imagenes.  |
+| `/main/profile/reportTools` | Se les redirigirá a otra pagina donde estara el formato de reporte correspondiente donde contener lo siguiente 3 `textbox` para el  `id de la imagen', 'nombre del usuario' y 'mensaje del reporte'   |
 
-# Archivos Relacionados
-
- -
+---
 
 Prefijos de almacenamiento:
 
