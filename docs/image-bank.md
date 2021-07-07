@@ -39,11 +39,11 @@ Se debera de crear un banco de imagenes, lo cual debemos de pensar que entidades
 ---
 # Acciones que se pueden realizar en la API:
 ## *administrador*
-- Visualizar todos los reportes('app:imageReports:read:all')
-- Cambiar los estados de los reportes('app:imageReports:update:all')
-- Borrar reportes de los usuarios('app:imageReports:delete:all')
-- Borrar imagenes de otros usuarios('app:imageBank:delete:all')
-- Solicitar imagenes de otros usuarios('app:imageBank:read:all')
+- Visualizar todos los reportes(`app:imageReports:read:all`)
+- Cambiar los estados de los reportes(`app:imageReports:update:all`)
+- Borrar reportes de los usuarios(`app:imageReports:delete:all`)
+- Borrar imagenes de otros usuarios(`app:imageBank:delete:all`)
+- Solicitar imagenes de otros usuarios(`app:imageBank:read:all`)
 
 ## *Usuario*
 - Buscar sus imagenes y de otros usuarios ('app:imageBank:read:all')
