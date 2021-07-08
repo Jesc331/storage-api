@@ -148,6 +148,7 @@ Archivos relacionados a este proceso:
 ### Respuesta a un usuario registrado
 ```
 {
+  "code" : 201,
   "message": "usuario <user> registrado exitosamente",
   "user" : "eduardo33"
 }
@@ -251,3 +252,31 @@ Archivos relacionados a este proceso:
 ```
 ---
 # Implementacion de rutas para los recursos
+`POST /auth/user_storage`
+- Recibe una estructura para registrar un usuario nuevo.
+- 201, registra al usuario y regresa un mensaje informando que se ha registrado exitosamente.
+- D.O.M regresa un mensaje de falla del servidor(500) o falla del usuario(400)
+`GET /auth/login`
+- Recibe una estructura para consultar un usuario existen.
+- 201, se reconoce al usuario por sus credenciales y se le permite el acceso a la API.
+- D.O.M regresa un mensaje de falla del servidor(500) o falla del usuario(400)
+`GET /main/home`
+- Recibe una peticion para mostrar la pagina principal de la API.
+- 201, se despliega la pagina de inicio de la API..
+- D.O.M regresa un mensaje de falla del servidor(500).
+`POST /main/upload`
+- Recibe una estructura para subir una imagen nueva.
+- 201, sube correctamente la imagen y se guarda en el almacenamiento de la API y muestra un mensaje de que el proceso se realizó correctamente.
+- D.O.M regresa un mensaje de falla del servidor(500) o falla del usuario(400)
+`GET /main/profile/user_home`
+- Recibe una peticion para mostrar la pagina del perfil del usuario.
+- 201, se desplega una pagina en la cual podra ver las imagenes que ha subido ese usuario y un boton para eliminar y crear reportes.
+- D.O.M regresa un mensaje de falla del servidor(500) o falla del usuario(400)
+`DELETE /main/profile/delete`
+- Recibe una estructura para eliminar una imagen en especifico
+- 201, se muestra un mensaje de que la tarea se realizo con exitosamente.
+- D.O.M regresa un mensaje de falla del servidor(500) o falla del usuario(400)
+`POST /main/profile/reportTools`
+- Recibe crear un reporte que recibira el administrador
+- 201, se muestra un mensaje de que la tarea se realizo con exitosamente.
+- D.O.M regresa un mensaje de falla del servidor(500) o falla del usuario(400)
