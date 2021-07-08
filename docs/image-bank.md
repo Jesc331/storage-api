@@ -70,6 +70,10 @@ La intencion de presentar esta imagen es que se sepa donde se deban dirigir los 
 
 El usuario debera de crear un usuario para usar la API, ya que el nombre del usuario registrado tambien servira como etiqueta para buscar imagenes de alguna persona en particular y almacenar las imagenes correspondientes.
 
+Habra una sección en la cual se podran crear reportes para avisar a los administradores sobre imagenes inapropiadas para que sean eliminadas asi como tambien podran usar esta funcion para reportar algun bug o error.
+
+Por ultimo una página de inicio donde habra una barra buscadora donde podran visualizar y buscar las imagenes de otros usuarios.
+
 # Procesos dentro de la API
 
 ## Registro de Usuaurio
@@ -246,4 +250,4 @@ Archivos relacionados a este proceso:
 }
 ```
 ---
-#Implementacion de rutas para los recursos
+# Implementacion de rutas para los recursos
