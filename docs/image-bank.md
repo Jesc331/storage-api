@@ -64,6 +64,8 @@ Se propone que se siga la siguiente estructura para los documentos para asi mism
 </p>
 </div>
 
+La intencion de presentar esta imagen es que se sepa donde se deban dirigir los documentos para cada proceso.
+
 ## Modo de uso
 
 El usuario debera de crear un usuario para usar la API, ya que el nombre del usuario registrado tambien servira como etiqueta para buscar imagenes de alguna persona en particular y almacenar las imagenes correspondientes.
@@ -130,11 +132,118 @@ Archivos relacionados a este proceso:
 | `/main/profile/reportTools` | Se les redirigirá a otra pagina donde estara el formato de reporte correspondiente donde contener lo siguiente 3 `textbox` para el  `id de la imagen', 'nombre del usuario' y 'mensaje del reporte'   |
 
 ---
+# Estructuras de solicitud y respuesta
 
-Prefijos de almacenamiento:
+## Registrar a un usuario
+```
+{
+  "user": "eduardo33",
+  "password": "hello123"
+}
+```
+### Respuesta a un usuario registrado
+```
+{
+  "message": "usuario <user> registrado exitosamente",
+  "user" : "eduardo33"
+}
+```
+### Mensaje de fallo
+```
+{
+  "code": 500,
+  "message" : "fallo de registro intentalo nuevamente"
+}
+```
+---
 
- - `image-bank/`
-
-Tablas de Base de Datos
-
-> Pendiente o Nulo
+## Subir una imagen
+```
+{
+  "name": "paisaje montañas",
+  "file": "C:/Users/salas/ComputoenlaNube/bottle-demo/storage-api/images_resources.png",
+  "owner" : "eduardo33",
+  "category" : {
+      "tag1" : "landscape",
+      "tag2" : "nature"
+    },
+  "original_description" : "Un hermoso paisaje de unas montañas"
+}
+```
+### Respuesta de una imagen correctamente subida
+```
+{
+  "code" : 201,
+  "message": "imagen <name> subida correctamente"
+}
+```
+### Mensaje de fallo
+```
+{
+  "code": 400,
+  "message" : "Requisitos faltantes, por favor buscar errores en el formulario"
+}
+{
+  "code": 500,
+  "message" : "Algo falló en el servidor, por favor intentalo nuevamente"
+}
+```
+---
+## Crear un reporte
+```
+{
+  "user": "eduardo33",
+  "message": "esta imagen es inadecuada"
+}
+```
+### Respuesta de un reporte recibido correctamente
+```
+{
+  "code" : 201,
+  "report_id": "acb123",
+  "message": "se ha recibido su reporte <report_id> ",
+  "status" : "open",
+}
+```
+### Mensaje de fallo
+```
+{
+  "code": 400,
+  "message" : "Requisitos faltantes, por favor buscar errores en el formulario"
+}
+{
+  "code": 500,
+  "message" : "Algo falló en el servidor, por favor intentalo nuevamente"
+}
+```
+---
+## Borrar una imagen
+```
+{
+  "user": "eduardo33",
+  "name"¨: "paisaje montañas",
+  "image_id": "a12",
+}
+```
+### Respuesta de que la imagen fue borrada correctamente
+```
+{
+  "code" : 201,
+  "image_id": "a12",
+  "name": "paisaje montañas",
+  "message" : "la imagen <paisaje montañas> fue eliminada",
+}
+```
+### Mensaje de fallo
+```
+{
+  "code": 400,
+  "message" : "Requisitos faltantes, por favor buscar errores en el formulario"
+}
+{
+  "code": 500,
+  "message" : "Algo falló en el servidor, por favor intentalo nuevamente"
+}
+```
+---
+#Implementacion de rutas para los recursos
