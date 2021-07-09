@@ -259,10 +259,10 @@ Archivos relacionados a este proceso:
 
 <div>
 <p style = 'text-align:center;'>
-<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_register_messages.png" alt="logR" width="480px">
-<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_register_OK.png" alt="log1" width="480px">
-<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_register_error.png" alt="log2" width="480px">
-<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_register_error2.png" alt="log3" width="480px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_register_messages.png" width="480px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_register_OK.png"  width="480px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_register_error.png"  width="480px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_register_error2.png"  width="480px">
 </p>
 </div>
 
@@ -273,8 +273,8 @@ Archivos relacionados a este proceso:
 
 <div>
 <p style = 'text-align:center;'>
-<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_layout.png" alt="logR" width="620px">
-<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_options.png" alt="log1" width="620px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_layout.png"  width="480px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_options.png" " width="480px">
 </p>
 </div>
 
@@ -285,8 +285,8 @@ Archivos relacionados a este proceso:
 
 <div>
 <p style = 'text-align:center;'>
-<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/home_layout.png" alt="logR" width="620px">
-<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/home_layout2.png" alt="log1" width="620px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/home_layout.png"  width="480px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/home_layout2.png"  width="480px">
 </p>
 </div>
 
@@ -294,6 +294,14 @@ Archivos relacionados a este proceso:
 - Recibe una estructura para subir una imagen nueva.
 - 201, sube correctamente la imagen y se guarda en el almacenamiento de la API y muestra un mensaje de que el proceso se realizó correctamente.
 - D.O.M regresa un mensaje de falla del servidor(500) o falla del usuario(400)
+
+<div>
+<p style = 'text-align:center;'>
+<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/uploaded_layout.png"  width="480px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/uploaded_succesfully.png"  width="480px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/uploaded_error.png"  width="480px">
+</p>
+</div>
 
 `GET /main/profile/user_home`
 - Recibe una peticion para mostrar la pagina del perfil del usuario.
