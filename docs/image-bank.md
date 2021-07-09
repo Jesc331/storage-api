@@ -262,7 +262,7 @@ Archivos relacionados a este proceso:
 <img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_register_messages.png" alt="logR" width="480px">
 <img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_register_OK.png" alt="log1" width="480px">
 <img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_register_error.png" alt="log2" width="480px">
-<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_register_error2.png"alt="log3" width="480px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_register_error2.png" alt="log3" width="480px">
 </p>
 </div>
 
@@ -273,8 +273,8 @@ Archivos relacionados a este proceso:
 
 <div>
 <p style = 'text-align:center;'>
-<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_layout.png" alt="logR" width="480px">
-<img src=https://github.com/Jesc331/storage-api/blob/master/images_resources/login_options.png" alt="log1" width="480px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_layout.png" alt="logR" width="620px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_options.png" alt="log1" width="620px">
 </p>
 </div>
 
@@ -282,6 +282,13 @@ Archivos relacionados a este proceso:
 - Recibe una peticion para mostrar la pagina principal de la API.
 - 201, se despliega la pagina de inicio de la API..
 - D.O.M regresa un mensaje de falla del servidor(500).
+
+<div>
+<p style = 'text-align:center;'>
+<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/home_layout.png" alt="logR" width="620px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/home_layout2.png" alt="log1" width="620px">
+</p>
+</div>
 
 `POST /main/upload`
 - Recibe una estructura para subir una imagen nueva.
