@@ -259,10 +259,10 @@ Archivos relacionados a este proceso:
 
 <div>
 <p style = 'text-align:center;'>
-<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_register_messages.png" alt="logR" width="360px">
-<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_register_OK.png" alt="log1" width="360px">
-<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_register_error.png" alt="log2" width="360px">
-<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_register_error2.png"alt="log3" width="360px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_register_messages.png" alt="logR" width="480px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_register_OK.png" alt="log1" width="480px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_register_error.png" alt="log2" width="480px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_register_error2.png"alt="log3" width="480px">
 </p>
 </div>
 
@@ -273,12 +273,8 @@ Archivos relacionados a este proceso:
 
 <div>
 <p style = 'text-align:center;'>
-<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_layout.png" alt="RHTTP" width="240px">
-</p>
-</div>
-<div>
-<p style = 'text-align:center;'>
-<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_options.png" alt="RHTTP" width="240px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_layout.png" alt="logR" width="480px">
+<img src=https://github.com/Jesc331/storage-api/blob/master/images_resources/login_options.png" alt="log1" width="480px">
 </p>
 </div>
 
