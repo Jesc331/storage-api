@@ -259,10 +259,17 @@ Archivos relacionados a este proceso:
 
 <div>
 <p style = 'text-align:center;'>
+<<<<<<< HEAD
 <img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_register_messages.png" alt="logR" width="360px">
 <img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_register_OK.png" alt="log1" width="360px">
 <img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_register_error.png" alt="log2" width="360px">
 <img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_register_error2.png"alt="log3" width="360px">
+=======
+<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_register_messages.png" alt="RHTTP" width="240px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_register_OK.png" alt="RHTTP" width="240px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_register_error.png"
+<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_register_error2.png"
+>>>>>>> d96a4d3c20c7209ff3a3278eadb9b3c9f68cf1ab
 </p>
 
 `GET /auth/login`
