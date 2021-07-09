@@ -257,10 +257,29 @@ Archivos relacionados a este proceso:
 - 201, registra al usuario y regresa un mensaje informando que se ha registrado exitosamente.
 - D.O.M regresa un mensaje de falla del servidor(500) o falla del usuario(400)
 
+<div>
+<p style = 'text-align:center;'>
+<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_register_messages.png" alt="RHTTP" width="240px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_register_OK.png" alt="RHTTP" width="240px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_register_error.png"
+<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_register_error2.png"
+</p>
+
 `GET /auth/login`
 - Recibe una estructura para consultar un usuario existen.
 - 201, se reconoce al usuario por sus credenciales y se le permite el acceso a la API.
 - D.O.M regresa un mensaje de falla del servidor(500) o falla del usuario(400)
+
+<div>
+<p style = 'text-align:center;'>
+<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_layout.png" alt="RHTTP" width="240px">
+</p>
+</div>
+<div>
+<p style = 'text-align:center;'>
+<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_options.png" alt="RHTTP" width="240px">
+</p>
+</div>
 
 `GET /main/home`
 - Recibe una peticion para mostrar la pagina principal de la API.
