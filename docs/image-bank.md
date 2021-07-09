@@ -308,6 +308,14 @@ Archivos relacionados a este proceso:
 - 201, se desplega una pagina en la cual podra ver las imagenes que ha subido ese usuario y un boton para eliminar y crear reportes.
 - D.O.M regresa un mensaje de falla del servidor(500) o falla del usuario(400)
 
+<div>
+<p style = 'text-align:center;'>
+<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/create_reports_layout.png"  width="480px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/delete_images.png"  width="480px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/delete_images_process.png"  width="480px">
+</p>
+</div>
+
 `DELETE /main/profile/delete`
 - Recibe una estructura para eliminar una imagen en especifico
 - 201, se muestra un mensaje de que la tarea se realizo con exitosamente.
