@@ -18,7 +18,7 @@ Se debera de crear un banco de imagenes, lo cual debemos de pensar que entidades
 
 <div>
 <p style = 'text-align:center;'>
-<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/ERdeHockey.png" alt="ERD" width="640px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/storage/images_resources/ERdeHockey.png" alt="ERD" width="640px">
 </p>
 </div>
 
@@ -60,7 +60,7 @@ Se propone que se siga la siguiente estructura para los documentos para asi mism
 
 <div>
 <p style = 'text-align:center;'>
-<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/Rutas%20HTTP.png" alt="RHTTP" width="640px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/storage/images_resources/Rutas%20HTTP.png" alt="RHTTP" width="640px">
 </p>
 </div>
 
@@ -260,10 +260,10 @@ Archivos relacionados a este proceso:
 
 <div>
 <p style = 'text-align:center;'>
-<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_register_messages.png" width="480px">
-<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_register_OK.png"  width="480px">
-<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_register_error.png"  width="480px">
-<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_register_error2.png"  width="480px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/storage/images_resources/login_register_messages.png" width="480px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/storage/images_resources/login_register_OK.png"  width="480px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/storage/images_resources/login_register_error.png"  width="480px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/storage/images_resources/login_register_error2.png"  width="480px">
 </p>
 </div>
 
@@ -274,8 +274,8 @@ Archivos relacionados a este proceso:
 
 <div>
 <p style = 'text-align:center;'>
-<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_layout.png"  width="480px">
-<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/login_options.png" " width="480px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/storage/images_resources/login_layout.png"  width="480px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/storage/images_resources/login_options.png" width="480px">
 </p>
 </div>
 
@@ -286,8 +286,8 @@ Archivos relacionados a este proceso:
 
 <div>
 <p style = 'text-align:center;'>
-<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/home_layout.png"  width="480px">
-<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/home_layout2.png"  width="480px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/storage/images_resources/home_layout.png"  width="480px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/storage/images_resources/home_layout2.png"  width="480px">
 </p>
 </div>
 
@@ -298,9 +298,9 @@ Archivos relacionados a este proceso:
 
 <div>
 <p style = 'text-align:center;'>
-<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/uploaded_layout.png"  width="480px">
-<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/uploaded_succesfully.png"  width="480px">
-<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/uploaded_error.png"  width="480px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/storage/images_resources/uploaded_layout.png"  width="480px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/storage/images_resources/uploaded_succesfully.png"  width="480px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/storage/images_resources/uploaded_error.png"  width="480px">
 </p>
 </div>
 
@@ -311,8 +311,8 @@ Archivos relacionados a este proceso:
 
 <div>
 <p style = 'text-align:center;'>
-<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/create_reports_layout.png"  width="480px">
-<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/delete_images.png"  width="480px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/storage/images_resources/create_reports_layout.png"  width="480px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/storage/images_resources/delete_images.png"  width="480px">
 
 `DELETE /main/profile/delete`
 - Recibe una estructura para eliminar una imagen en especifico
@@ -321,7 +321,7 @@ Archivos relacionados a este proceso:
 
 <div>
 <p style = 'text-align:center;'>
-<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/delete_images_process.png"  width="480px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/storage/images_resources/delete_images_process.png"  width="480px">
 </p>
 </div>
 
@@ -334,10 +334,10 @@ Archivos relacionados a este proceso:
 
 <div>
 <p style = 'text-align:center;'>
-<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/reports_layout.png" width="480px">
-<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/report_message_ok.png"  width="480px">
-<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/report_message_error.png"  width="480px">
-<img src="https://github.com/Jesc331/storage-api/blob/master/images_resources/report_message_ok2.png"  width="480px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/storage/images_resources/reports_layout.png" width="480px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/storage/images_resources/report_message_ok.png"  width="480px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/storage/images_resources/report_message_error.png"  width="480px">
+<img src="https://github.com/Jesc331/storage-api/blob/master/storage/images_resources/report_message_ok2.png"  width="480px">
 </p>
 </div>
 
