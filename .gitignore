@@ -1,4 +1,3 @@
 .project-prefixes-owners
 .env
 gcloud_key.json
-storage/
