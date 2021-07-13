@@ -2,3 +2,5 @@
 .env
 gcloud_key.json
 /storage/
+*.py[cod]
+*$py.class
