@@ -17,7 +17,7 @@ import models.base
 app = BottleJson()
 
 app.mount("/auth", routes.auth.app)
-app.mount("/imagebank", routes.image-bank.app)
+app.mount("/imagebank", routes.imagebank.app)
 app.mount("/storage", routes.storage.app)
 
 
