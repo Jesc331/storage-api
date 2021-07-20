@@ -1,8 +1,9 @@
 from json import dumps as json_dumps
 from modules.auth import validate_token, auth_required
 import bottle
+from modules.bottles import BotlleJson
 
-app = bottle.Bottle()
+app = BottleJson()
 
 @app.get("/main/home")
 def display_page(*args, **kwargs):

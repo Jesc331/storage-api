@@ -9,11 +9,12 @@ service.
 import sys
 import datetime
 import bottle
+from modules.bottles improt BottleJson
 import routes.auth
 import routes.storage
 import models.base
 
-app = bottle.Bottle()
+app = BottleJson()
 
 app.mount("/auth", routes.auth.app)
 app.mount("/imagebank", routes.image-bank.app)
