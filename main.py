@@ -25,22 +25,4 @@ def root_index(*args, **kwargs):
 
 
 if __name__ == '__main__':
-<<<<<<< HEAD
     app.run(host="0.0.0.0", port=8000)
-=======
-    error = False
-    if (argv_len := len(sys.argv)) > 1:
-        if sys.argv[1] == 'routes':
-            for route in app.routes:
-                print(route.rule, route.method, route, sep="\t")
-        if sys.argv[1] == 'db' and 'migrate' in sys.argv:
-            print("Database Migration:")
-            now_iso = datetime.datetime.utcnow().isoformat()
-            models.base.migrate_database(now_iso)
-        else:
-            error = True
-    elif error:
-        print("Bad use")
-    else:
-        app.run(host="0.0.0.0", port=8080)
->>>>>>> 48f3156eaa501b04b4aaf48f221e0d22fb39959a

@@ -107,21 +107,12 @@
         },
         "dropbox": {
             "hashes": [
-<<<<<<< HEAD
-                "sha256:27e70bae5082ca96938ea02ac03b9e1d4accf794a5d1632d8168b6835eff70c1",
-                "sha256:526b66385f6ade173eda37c1f23d64b6f2f39dda00287d8287dd2bf04a8de02f",
-                "sha256:bd024f9f4d90d2c9e1f62f09f3cda46ca3799d33258cfcb8ec02cf112db1f217"
-            ],
-            "index": "pypi",
-            "version": "==11.12.0"
-=======
                 "sha256:24852a28529bcdf691f244c99b7d13aae212764c6aa55607941e50d81f4e10bc",
                 "sha256:c84fef2d9e66083976d97c0489eb2ca8692505199fa5961658c4e81da4f9df08",
                 "sha256:d74648036558d726e814a04ec7b5bbc820253be45a674e8ee6ee49b06d08460b"
             ],
             "index": "pypi",
             "version": "==11.13.2"
->>>>>>> 48f3156eaa501b04b4aaf48f221e0d22fb39959a
         },
         "google-api-core": {
             "hashes": [
