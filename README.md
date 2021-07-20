@@ -24,7 +24,7 @@ Make sure you have `python39` and `pipenv` installed on your system.
 
 > to install `pipenv` execute `pip install pipenv`
 
-Before running any python programs you should make sure you have the appropriate 
+Before running any python programs you should make sure you have the appropriate
 environment variables set in your `.env` file.
 
 You can get started by copying `example.env` to `.env`, and then you should
@@ -50,7 +50,7 @@ name space every file in modules, routes, and docs.
 Try and keep it to one file per directory.
 
 If you are using storage, name pace your directories, and name space
-your database tables manually and keep the database interface 
+your database tables manually and keep the database interface
 friendly.
 
 And example would be `dell-warranty`
