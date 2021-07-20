@@ -5,15 +5,18 @@ name = "pypi"
 
 [packages]
 bottle = "*"
-google-cloud-storage = "*"
-pyjwt = "*"
-peewee = "*"
 dropbox = "*"
+google-cloud-storage = "*"
+peewee = "*"
+peewee-migrate = "*"
+pyjwt = "*"
 
 [dev-packages]
+webtest = "*"
 
 [requires]
 python_version = "3.9"
 
 [scripts]
 start = "python main.py"
+migrate = "python main.py db migrate"
