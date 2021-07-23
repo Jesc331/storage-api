@@ -13,6 +13,7 @@ from modules.bottles import BottleJson
 import routes.auth
 import routes.storage
 import models.base
+import routes.imagebank
 
 app = BottleJson()
 
