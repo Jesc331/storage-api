@@ -17,6 +17,8 @@ def get_storage_image(path=""):
     mime = (guess_type(str(target)) or ["application/octet-stream"])[0]
     return mime, target.read_bytes()
 
+# Pendiente de revision ya que no se como guardar imagenes
+'''
 def add_image(image_id = None, name = None, user_id = None, category = None, description = None):
 
     print(image_id, name, user_id, category, description)
@@ -36,6 +38,8 @@ def add_image(image_id = None, name = None, user_id = None, category = None, des
         json.dumps(almacenable)
     )
     return datos
+'''
+
 
 def get_image_list(images=None):
     query_result = query_storage(
@@ -59,4 +63,33 @@ def get_image_details(image_id=None):
 def get_comments_from_image(image_id = None, description = None):
     print("Desde modulo imageBank.py")
     print(image, description)
+    print("Tarea realizada exitosamente")
+
+def add_comment(id_comment = None, user_id = None, image_id = None, name = None, description = None):
+
+    print("Desde Modulo add_comment")
+    print(id_comment, user_id, image_id, name, description)
+    print("Tarea realizada exitosamente")
+
+    almacenable = {
+        "id_comment": id_comment,
+        "image_id": image_id,
+        "name": name,
+        "user_id": user_id,
+        "category": category,
+        "description": description,
+    }
+    nombre_de_archivo = f"{review_id}-{movie_title}.json"
+    datos = store_string(
+        "movie/reviews",
+        nombre_de_archivo,
+        json.dumps(almacenable)
+    )
+    return datos
+
+
+
+def get_review_from_certain_movie(movie_id = None, review_id = None):
+    print("Desde modulo movie_info.py")
+    print(movie_id, reviews)
     print("Exito")
