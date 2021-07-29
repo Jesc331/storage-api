@@ -17,6 +17,22 @@ def get_storage_image(path=""):
     mime = (guess_type(str(target)) or ["application/octet-stream"])[0]
     return mime, target.read_bytes()
 
-def store_string(collection, filename, text):
-    target = get_image_to_store(collection, filename)
-    target.upload_from_string(text)
+def add_image(image_id = None, name = None, user_id = None, category = None, description = None):
+
+    print(image_id, name, user_id, category, description)
+    print("Tarea Realizada Correctamente")
+
+    almacenable = {
+        "image_id": image_id,
+        "name": name,
+        "user_id": user_id,
+        "category": category,
+        "description": description,
+    }
+    nombre_de_archivo = f"{name}-{image_id}.json"
+    datos = store_string(
+        "image/images",
+        nombre_de_archivo,
+        json.dumps(almacenable)
+    )
+    return datos
