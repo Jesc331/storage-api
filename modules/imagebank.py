@@ -39,7 +39,24 @@ def add_image(image_id = None, name = None, user_id = None, category = None, des
     )
     return datos
 '''
+# Funcion para añadir un usuario
+def add_user(user_id = None, username = None):
 
+    print(user_id, username)
+    print("Tarea Realizada Correctamente")
+
+    almacenable = {
+        "user_id": user_id,
+        "username": username
+    }
+
+    nombre_de_archivo = f"{username}-{user_id}.json"
+    datos = store_string(
+        "image/users",
+        nombre_de_archivo,
+        json.dumps(almacenable)
+    )
+    return datos
 
 def get_image_list(images=None):
     query_result = query_storage(
