@@ -2,6 +2,10 @@ import json
 from datetime import datetime
 from os import environ
 from pathlib import Path
+from modules.storage import (
+    store_string, store_bytes,
+    query_storage, get_storage_file
+)
 
 def get_image_to_store(collection, filename):
     target = str(Path(collection) / filename)
@@ -42,13 +46,13 @@ def add_image(image_id = None, name = None, user_id = None, category = None, des
 # Funcion para añadir un usuario
 def add_user(user_id = None, username = None, password = None):
 
-    print(user_id, username)
+    print(user_id, username, password)
     print("Tarea Realizada Correctamente")
 
     almacenable = {
         "user_id": user_id,
         "username": username,
-        "password": password
+        "password": password,
     }
 
     nombre_de_archivo = f"{username}-{user_id}.json"

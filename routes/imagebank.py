@@ -2,9 +2,7 @@ import datetime as dt
 import bottle
 from modules.bottles import BottleJson
 from modules.imagebank import (
-    add_user,
-    get_images_id,
-    get_images_list
+    add_user
 )
 
 app = BottleJson()
@@ -23,8 +21,6 @@ def store(*args, **kwargs):
         user_id = str(payload['user_id'])
         username = str(payload['username'])
         password = str(payload['password'])
-        if len(user_id or username or password) == 0 :
-            raise Exception()
         print("datos validos")
         respuesta = add_user(**payload)
         print(respuesta)
