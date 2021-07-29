@@ -98,15 +98,8 @@ def add_comment(id_comment = None, user_id = None, image_id = None, name = None,
     }
     nombre_de_archivo = f"{review_id}-{movie_title}.json"
     datos = store_string(
-        "movie/reviews",
+        "images/comments",
         nombre_de_archivo,
         json.dumps(almacenable)
     )
     return datos
-
-
-
-def get_review_from_certain_movie(movie_id = None, review_id = None):
-    print("Desde modulo movie_info.py")
-    print(movie_id, reviews)
-    print("Exito")
