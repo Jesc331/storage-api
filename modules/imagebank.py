@@ -36,3 +36,27 @@ def add_image(image_id = None, name = None, user_id = None, category = None, des
         json.dumps(almacenable)
     )
     return datos
+
+def get_image_list(images=None):
+    query_result = query_storage(
+        "image/images",
+    )
+    if images is None:
+        return query_result["content"]
+
+def get_image_details(image_id=None):
+    query_result = query_storage(
+        "image/images",
+    )
+    if image_id is not None:
+        return [
+           r
+           for r in query_result["content"]
+           if movie_id in r
+        ]
+    print("Procesando Informacion")
+
+def get_comments_from_image(image_id = None, description = None):
+    print("Desde modulo imageBank.py")
+    print(image, description)
+    print("Exito")
