@@ -19,12 +19,9 @@ import routes.imagebank
 app = BottleJson()
 
 app.mount("/auth", routes.auth.app)
-<<<<<<< HEAD
 app.mount("/imagebank", routes.imagebank.app)
-=======
-app.mount("/example", routes.example.app)
->>>>>>> 7c205d3b455c24d48a96b01fac200d858da39a52
 app.mount("/storage", routes.storage.app)
+app.mount("/store", routes.imagebank.app)
 
 
 @app.get("/")
