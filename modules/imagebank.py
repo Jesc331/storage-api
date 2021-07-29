@@ -40,14 +40,15 @@ def add_image(image_id = None, name = None, user_id = None, category = None, des
     return datos
 '''
 # Funcion para añadir un usuario
-def add_user(user_id = None, username = None):
+def add_user(user_id = None, username = None, password = None):
 
     print(user_id, username)
     print("Tarea Realizada Correctamente")
 
     almacenable = {
         "user_id": user_id,
-        "username": username
+        "username": username,
+        "password": password
     }
 
     nombre_de_archivo = f"{username}-{user_id}.json"

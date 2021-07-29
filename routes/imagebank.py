@@ -1,6 +1,11 @@
+import datetime as dt
 import bottle
-from modules.auth import auth_required
 from modules.bottles import BottleJson
+from modules.imagebank import (
+    add_user,
+    get_images_id,
+    get_images_list
+)
 
 app = BottleJson()
 
@@ -10,34 +15,43 @@ def display_home(*args, **kwargs):
     bottle.response.content_type = "application/json"
     return dict(code= 501, message = "Page Not implemented")
 
-@app.get("/")
-def index():
-    payload = bottle.request.query
-    print(bottle.request.query)
-    print(payload.dict)
-    raise bottle.HTTPError(501, 'Error')
+@app.post("/store")
+def store(*args, **kwargs):
+    payload = bottle.request.json
+    print(payload)
+    try:
+        user_id = str(payload['user_id'])
+        username = str(payload['username'])
+        password = str(payload['password'])
+        if len(user_id or username or password) == 0 :
+            raise Exception()
+        print("datos validos")
+        respuesta = add_user(**payload)
+        print(respuesta)
+        print("Apunto de terminar")
+    except:
+        print("datos invalidos")
+        raise bottle.HTTPError(400, "Invalid data")
+    raise bottle.HTTPError(201, respuesta)
 
-@app.get("/home/<image_id>")
-def get_image(image_id):
-    print(image_id)
-    raise bottle.HTTPError(501, 'Error')
+@app.get("/info/list")
+def all_device(*args, **kwargs):
+    try:
+       respuesta = get_device_list()
+    except:
+        raise bottle.HTTPError(500, "Error interno")
+    raise bottle.HTTPError(200, respuesta)
 
-@app.get("/main/profile/user_home/<user_id>")
-def get_user(user_id):
-    print(user_id)
-    raise bottle.HTTPError(501, 'Error')
 
-@app.delete("/main/profile/delete/<image_id>")
-def delete_images(image_id):
-    print(image_id)
-    raise bottle.HTTPError(501, 'Error')
+@app.get("/info/<code>")
+def devices_per_st(*args,code=None, **kwargs):
+    try:
+        respuesta = get_device_list(st=code)
+    except:
+        raise bottle.HTTPError(400)
+    raise bottle.HTTPError(200, respuesta)
 
-@app.get("/main/profile/reportTools")
-def display_report_tools(*args, **kwargs):
-    bottle.response.status = 501
-    bottle.response.content_type = "application/json"
-    return dict(code= 501, message = "Page Not implemented")
-
+'''
 @app.post("/auth/user_storage/<data>")
 def create_profile(*args, **kwargs):
     payload = bottle.request.json
@@ -64,3 +78,4 @@ def create_profile(*args, **kwargs):
 def get_info_by_id(*args, **kwargs):
     # Codigo
     return dict(code = 501, message = "Not implemented")
+'''
