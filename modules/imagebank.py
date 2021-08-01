@@ -77,6 +77,14 @@ def get_user_by_id(user_id=None):
             if user_id in r
         ]
 
+# Sacar todos los usuarios
+def get_storage_users(path=None):
+    query_result = query_storage(
+        "image/users",
+    )
+    print(query_result)
+    return query_result['content']
+
 def get_image_details(image_id=None):
     query_result = query_storage(
         "image/images",
