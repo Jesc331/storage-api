@@ -22,6 +22,7 @@ app.mount("/auth", routes.auth.app)
 app.mount("/imagebank", routes.imagebank.app)
 app.mount("/storage", routes.storage.app)
 app.mount("/store", routes.imagebank.app)
+app.mount("/user_list", routes.imagebank.app)
 
 
 @app.get("/")
