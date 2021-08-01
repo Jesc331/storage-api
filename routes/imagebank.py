@@ -30,12 +30,12 @@ def store(*args, **kwargs):
         raise bottle.HTTPError(400, "Invalid data")
     raise bottle.HTTPError(201, respuesta)
 
-@app.get("/info/list")
-def all_device(*args, **kwargs):
+@app.get("/user_list")
+def get_all_users(*args, **kwargs):
     try:
-       respuesta = get_device_list()
+        respuesta = get_storage_users()
     except:
-        raise bottle.HTTPError(500, "Error interno")
+        raise bottle.HTTPError(501, "Error")
     raise bottle.HTTPError(200, respuesta)
 
 
