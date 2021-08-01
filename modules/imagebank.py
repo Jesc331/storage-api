@@ -43,6 +43,7 @@ def add_image(image_id = None, name = None, user_id = None, category = None, des
     )
     return datos
 '''
+# ----------------------------------usuarios--------------------------------
 # Funcion para añadir un usuario
 def add_user(user_id = None, username = None, password = None):
 
@@ -63,21 +64,8 @@ def add_user(user_id = None, username = None, password = None):
     )
     return datos
 
-# Sacar un usuario en especifico por ID
-def get_user_by_id(user_id=None):
-    query_result = query_storage(
-    "image/users"
-    )
-    if user_id is None:
-        return query_result["content"]
-    if user_id is not None:
-        return [
-            r
-            for r in query_result["content"]
-            if user_id in r
-        ]
-
-# Sacar todos los usuarios
+# Funcion para hacer un Get de todos los usuarios registrados
+# curl http://localhost:8081/imagebank/user_list -X GET
 def get_storage_users(path=None):
     query_result = query_storage(
         "image/users",
@@ -85,22 +73,14 @@ def get_storage_users(path=None):
     print(query_result)
     return query_result['content']
 
-def get_image_details(image_id=None):
-    query_result = query_storage(
-        "image/images",
-    )
-    if image_id is not None:
-        return [
-           r
-           for r in query_result["content"]
-           if movie_id in r
-        ]
-    print("Procesando Informacion")
+# Funcion para hacer un Get de todos los usuarios registrados
+# curl http://localhost:8081/imagebank/user/<user_id> -X GET
+def get_user_by_id(user_id=None):
+    print(username, password)
+    print("Exito")
 
-def get_comments_from_image(image_id = None, description = None):
-    print("Desde modulo imageBank.py")
-    print(image, description)
-    print("Tarea realizada exitosamente")
+
+# ----------------------------------COMENTARIOS--------------------------------
 
 def add_comment(id_comment = None, user_id = None, image_id = None, name = None, description = None):
 
