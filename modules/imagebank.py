@@ -63,12 +63,19 @@ def add_user(user_id = None, username = None, password = None):
     )
     return datos
 
-def get_image_list(images=None):
+# Sacar un usuario en especifico por ID
+def get_user_by_id(user_id=None):
     query_result = query_storage(
-        "image/images",
+    "image/users"
     )
-    if images is None:
+    if user_id is None:
         return query_result["content"]
+    if user_id is not None:
+        return [
+            r
+            for r in query_result["content"]
+            if user_id in r
+        ]
 
 def get_image_details(image_id=None):
     query_result = query_storage(
