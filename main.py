@@ -20,11 +20,10 @@ app = BottleJson()
 
 app.mount("/auth", routes.auth.app)
 app.mount("/imagebank", routes.imagebank.app)
-app.mount("/storage", routes.storage.app)
 app.mount("/register", routes.imagebank.app)
-app.mount("/user_list", routes.imagebank.app)
 app.mount("/user", routes.imagebank.app)
 app.mount("/comment", routes.imagebank.app)
+app.mount("/report", routes.imagebank.app)
 
 
 @app.get("/")

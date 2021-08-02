@@ -43,6 +43,40 @@ def add_image(image_id = None, name = None, user_id = None, category = None, des
     )
     return datos
 '''
+# ----------------------------------Reportes--------------------------------
+def add_report(report_id = None, username = None, status = None, message = None, image_id=None):
+
+    print(report_id, username, status, message)
+    print("Tarea Realizada Correctamente")
+
+    almacenable = {
+        "report_id": report_id,
+        "username": username,
+        "status": status,
+        "message": message,
+        "image_id": image_id
+    }
+
+    nombre_de_archivo = f"{report_id}-{username}-{status}.json"
+    datos = store_string(
+        "image/reports",
+        nombre_de_archivo,
+        json.dumps(almacenable)
+    )
+    return datos
+
+def get_storage_reports(report_id=None):
+    query_result = query_storage(
+        "image/reports",
+    )
+    if report_id is None:
+        return query_result["content"]
+    if report_id is not None:
+        return [
+           r
+           for r in query_result["content"]
+           if report_id in r
+        ]
 # ----------------------------------usuarios--------------------------------
 # Funcion para añadir un usuario
 def add_user(user_id = None, username = None, password = None):
@@ -65,31 +99,31 @@ def add_user(user_id = None, username = None, password = None):
     return datos
 
 # Funcion para hacer un Get de todos los usuarios registrados
-# curl http://localhost:8081/imagebank/user_list -X GET
-def get_storage_users(path=None):
+# curl http://localhost:8081/imagebank/user/list -X GET
+def get_storage_users(user_id=None):
     query_result = query_storage(
         "image/users",
     )
-    print(query_result)
-    return query_result['content']
-
-# Funcion para hacer un Get de todos los usuarios registrados
-# curl http://localhost:8081/imagebank/user/<user_id> -X GET
-def get_user_by_id(user_id=None):
-    print(username, password)
-    print("Exito")
-
+    if user_id is None:
+        return query_result["content"]
+    if user_id is not None:
+        return [
+           r
+           for r in query_result["content"]
+           if user_id in r
+        ]
 
 # ----------------------------------COMENTARIOS--------------------------------
-
-def add_comment(comment_id = None,  image_id = None, user = None, user_id = None , description = None):
+#Ejemplo
+#curl http://localhost:8081/imagebank/comment -X POST -H 'Content-Type: application/json' -d '{"comment_id":"001", "image_id":"001","name":"eduardo", "user_id":"001","description":"buena imagen me gusta el fondo que tiene"}'
+def add_comment(comment_id = None,  image_id = None, username = None, user_id = None , description = None):
 
     print("Desde Modulo add_comment")
 
     almacenable = {
         "comment_id": comment_id,
         "image_id": image_id,
-        "user": user,
+        "username": username,
         "user_id": user_id,
         "description": description,
     }
@@ -101,9 +135,16 @@ def add_comment(comment_id = None,  image_id = None, user = None, user_id = None
     )
     return datos
 
-def get_storage_comment(path=None):
+# curl http://localhost:8081/imagebank/comment/list -X GET
+def get_storage_comment(comment_id=None):
     query_result = query_storage(
         "image/comments",
     )
-    print(query_result)
-    return query_result['content']
+    if comment_id is None:
+        return query_result["content"]
+    if comment_id is not None:
+        return [
+           r
+           for r in query_result["content"]
+           if comment_id in r
+        ]

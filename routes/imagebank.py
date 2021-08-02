@@ -9,8 +9,59 @@ def display_home(*args, **kwargs):
     bottle.response.status = 501
     bottle.response.content_type = "application/json"
     return dict(code= 501, message = "Page Not implemented")
+# -----------------------------REPORTES-------------------------------
+@app.get("/report/<code>")
+def reports_per_id(*args,code=None, **kwargs):
+    try:
+        respuesta = get_storage_reports(report_id=code)
+    except:
+        raise bottle.HTTPError(400)
+    raise bottle.HTTPError(200, respuesta)
+
+@app.get("/report/list")
+def get_all_reports(*args, **kwargs):
+    try:
+        respuesta = get_storage_reports()
+    except:
+        raise bottle.HTTPError(501, "Error")
+    raise bottle.HTTPError(200, respuesta)
+
+@app.post("/report")
+def report(*args, **kwargs):
+    payload = bottle.request.json
+    print(payload)
+    try:
+        report_id = str(payload['report_id'])
+        username = str(payload['username'])
+        status = str(payload['status'])
+        message = str(payload['message'])
+        image_id = str(payload['image_id'])
+        print("datos validos")
+        respuesta = add_report(**payload)
+        print(respuesta)
+        print("Apunto de terminar")
+    except:
+        print("datos invalidos")
+        raise bottle.HTTPError(400, "Invalid data")
+    raise bottle.HTTPError(201, respuesta)
 
 # -----------------------------USUARIOS-------------------------------
+@app.get("/user/<code>")
+def users_per_id(*args,code=None, **kwargs):
+    try:
+        respuesta = get_storage_users(user_id=code)
+    except:
+        raise bottle.HTTPError(400)
+    raise bottle.HTTPError(200, respuesta)
+
+@app.get("/user/list")
+def get_all_users(*args, **kwargs):
+    try:
+        respuesta = get_storage_users()
+    except:
+        raise bottle.HTTPError(501, "Error")
+    raise bottle.HTTPError(200, respuesta)
+
 @app.post("/register")
 def store(*args, **kwargs):
     payload = bottle.request.json
@@ -28,22 +79,23 @@ def store(*args, **kwargs):
         raise bottle.HTTPError(400, "Invalid data")
     raise bottle.HTTPError(201, respuesta)
 
-@app.get("/user/list")
-def get_all_users(*args, **kwargs):
+# -----------------------------COMENTARIOS-------------------------------
+@app.get("/comment/<code>")
+def comments_per_id(*args,code=None, **kwargs):
     try:
-        respuesta = get_storage_users()
+        respuesta = get_storage_comment(comment_id=code)
+    except:
+        raise bottle.HTTPError(400)
+    raise bottle.HTTPError(200, respuesta)
+
+@app.get("/comment/list")
+def get_all_comments(*args, **kwargs):
+    try:
+        respuesta = get_storage_comment()
     except:
         raise bottle.HTTPError(501, "Error")
     raise bottle.HTTPError(200, respuesta)
 
-@app.get("/user/<code>")
-def devices_per_id(*args,code=None, **kwargs):
-    try:
-        respuesta = get_storage_users(user_id=code)
-    except:
-        raise bottle.HTTPError(400)
-    raise bottle.HTTPError(200, respuesta)
-# -----------------------------COMENTARIOS-------------------------------
 @app.post("/comment")
 def comment(*args, **kwargs):
     payload = bottle.request.json
@@ -62,11 +114,3 @@ def comment(*args, **kwargs):
         print("datos invalidos")
         raise bottle.HTTPError(400, "Invalid data")
     raise bottle.HTTPError(201, respuesta)
-
-@app.get("/comment/list")
-def get_all_comments(*args, **kwargs):
-    try:
-        respuesta = get_storage_comment()
-    except:
-        raise bottle.HTTPError(501, "Error")
-    raise bottle.HTTPError(200, respuesta)
