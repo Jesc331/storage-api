@@ -1,5 +1,5 @@
 import json
-from datetime import datetime
+import datetime as dt
 from os import environ
 from pathlib import Path
 from modules.storage import (
@@ -21,28 +21,6 @@ def get_storage_image(path=""):
     mime = (guess_type(str(target)) or ["application/octet-stream"])[0]
     return mime, target.read_bytes()
 
-# Pendiente de revision ya que no se como guardar imagenes
-'''
-def add_image(image_id = None, name = None, user_id = None, category = None, description = None):
-
-    print(image_id, name, user_id, category, description)
-    print("Tarea Realizada Correctamente")
-
-    almacenable = {
-        "image_id": image_id,
-        "name": name,
-        "user_id": user_id,
-        "category": category,
-        "description": description,
-    }
-    nombre_de_archivo = f"{name}-{image_id}.json"
-    datos = store_string(
-        "image/images",
-        nombre_de_archivo,
-        json.dumps(almacenable)
-    )
-    return datos
-'''
 # ----------------------------------Reportes--------------------------------
 def add_report(report_id = None, username = None, status = None, message = None, image_id=None):
 
@@ -148,3 +126,36 @@ def get_storage_comment(comment_id=None):
            for r in query_result["content"]
            if comment_id in r
         ]
+# ----------------------------------IMAGENES--------------------------------
+# Pendiente de revision ya que no se como guardar imagenes
+'''
+def add_image(image_id = None, name = None, user_id = None, category = None, description = None):
+
+    print(image_id, name, user_id, category, description)
+    print("Tarea Realizada Correctamente")
+
+    almacenable = {
+        "image_id": image_id,
+        "name": name,
+        "user_id": user_id,
+        "category": category,
+        "description": description,
+    }
+    nombre_de_archivo = f"{name}-{image_id}.json"
+    datos = store_string(
+        "image/images",
+        nombre_de_archivo,
+        json.dumps(almacenable)
+    )
+    return datos
+'''
+
+def store_new_image(image_number=None, image_file=None):
+    date = dt.date.today().isoformat()
+    filename = f"{image_number}-{date}.png"
+    store_bytes(
+        "image/pictures",
+        filename,
+        image_file.read()
+    )
+    return f"image/pictures/{filename}"

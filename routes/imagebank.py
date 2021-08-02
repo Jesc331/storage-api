@@ -78,6 +78,35 @@ def store(*args, **kwargs):
         print("datos invalidos")
         raise bottle.HTTPError(400, "Invalid data")
     raise bottle.HTTPError(201, respuesta)
+# -----------------------------Imagenes-------------------------------
+@app.post("/image/new")
+def new_image(*args, **kwargs):
+    payload = bottle.request.json
+    obligatory_fields = ['image_id', 'name', 'username', 'category']
+    try:
+        if any(key not in payload for key in obligatory_fields):
+            raise Exception()
+        print("Valid data")
+        respuesta = store_new_image(**payload)
+    except:
+        print("Invalid data")
+        raise bottle.HTTPError(400)
+    raise bottle.HTTPError(201, respuesta)
+
+@app.post("/image/new/<image_number>")
+def new_image(image_number):
+    try:
+        image_file = bottle.request.files.get("image_file")
+        payload = {
+            "image_number": image_number,
+            "image_file": image_file.file
+        }
+        print(image_file)
+        respuesta = store_new_image(**payload)
+    except:
+        print("Invalid data")
+        raise bottle.HTTPError(400)
+    raise bottle.HTTPError(201, respuesta)
 
 # -----------------------------COMENTARIOS-------------------------------
 @app.get("/comment/<code>")
