@@ -10,6 +10,7 @@ def display_home(*args, **kwargs):
     bottle.response.content_type = "application/json"
     return dict(code= 501, message = "Page Not implemented")
 
+# -----------------------------USUARIOS-------------------------------
 @app.post("/register")
 def store(*args, **kwargs):
     payload = bottle.request.json
@@ -41,4 +42,31 @@ def devices_per_id(*args,code=None, **kwargs):
         respuesta = get_storage_users(user_id=code)
     except:
         raise bottle.HTTPError(400)
+    raise bottle.HTTPError(200, respuesta)
+# -----------------------------COMENTARIOS-------------------------------
+@app.post("/comment")
+def comment(*args, **kwargs):
+    payload = bottle.request.json
+    print(payload)
+    try:
+        comment_id = str(payload['comment_id'])
+        image_id = str(payload['image_id'])
+        user = str(payload['user'])
+        user_id = str(payload['user_id'])
+        description = str(payload['description'])
+        print("datos validos")
+        respuesta = add_comment(**payload)
+        print(respuesta)
+        print("Apunto de terminar")
+    except:
+        print("datos invalidos")
+        raise bottle.HTTPError(400, "Invalid data")
+    raise bottle.HTTPError(201, respuesta)
+
+@app.get("/comment/list")
+def get_all_comments(*args, **kwargs):
+    try:
+        respuesta = get_storage_comment()
+    except:
+        raise bottle.HTTPError(501, "Error")
     raise bottle.HTTPError(200, respuesta)

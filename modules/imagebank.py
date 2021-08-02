@@ -82,24 +82,28 @@ def get_user_by_id(user_id=None):
 
 # ----------------------------------COMENTARIOS--------------------------------
 
-def add_comment(id_comment = None, user_id = None, image_id = None, name = None, description = None):
+def add_comment(comment_id = None,  image_id = None, user = None, user_id = None , description = None):
 
     print("Desde Modulo add_comment")
-    print(id_comment, user_id, image_id, name, description)
-    print("Tarea realizada exitosamente")
 
     almacenable = {
-        "id_comment": id_comment,
+        "comment_id": comment_id,
         "image_id": image_id,
-        "name": name,
+        "user": user,
         "user_id": user_id,
-        "category": category,
         "description": description,
     }
-    nombre_de_archivo = f"{review_id}-{movie_title}.json"
+    nombre_de_archivo = f"{comment_id}-{user}.json"
     datos = store_string(
-        "images/comments",
+        "image/comments",
         nombre_de_archivo,
         json.dumps(almacenable)
     )
     return datos
+
+def get_storage_comment(path=None):
+    query_result = query_storage(
+        "image/comments",
+    )
+    print(query_result)
+    return query_result['content']
