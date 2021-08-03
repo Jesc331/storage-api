@@ -95,11 +95,15 @@ def new_image(*args, **kwargs):
 
 @app.post("/image/new/<image_number>")
 def new_image(image_number):
+    print(image_number)
+    print(bottle.request.files.dict)
     try:
         image_file = bottle.request.files.get("image_file")
+        print(image_file.filename)
         payload = {
             "image_number": image_number,
-            "image_file": image_file.file
+            "image_file": image_file.file,
+            "image_ext": image_file.filename.split(".")[-1]
         }
         print(image_file)
         respuesta = store_new_image(**payload)

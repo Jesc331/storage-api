@@ -150,9 +150,9 @@ def add_image(image_id = None, name = None, user_id = None, category = None, des
     return datos
 '''
 
-def store_new_image(image_number=None, image_file=None):
+def store_new_image(image_number=None, image_file=None, image_ext=None):
     date = dt.date.today().isoformat()
-    filename = f"{image_number}-{date}.png"
+    filename = f"{image_number}-{date}.{image_ext}"
     store_bytes(
         "image/pictures",
         filename,
