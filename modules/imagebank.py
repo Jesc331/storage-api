@@ -128,27 +128,7 @@ def get_storage_comment(comment_id=None):
         ]
 # ----------------------------------IMAGENES--------------------------------
 # Pendiente de revision ya que no se como guardar imagenes
-'''
-def add_image(image_id = None, name = None, user_id = None, category = None, description = None):
-
-    print(image_id, name, user_id, category, description)
-    print("Tarea Realizada Correctamente")
-
-    almacenable = {
-        "image_id": image_id,
-        "name": name,
-        "user_id": user_id,
-        "category": category,
-        "description": description,
-    }
-    nombre_de_archivo = f"{name}-{image_id}.json"
-    datos = store_string(
-        "image/images",
-        nombre_de_archivo,
-        json.dumps(almacenable)
-    )
-    return datos
-'''
+# curl http://localhost:8081/imagebank/image/new/005 -X POST -H 'Content-Type: multipart/form-data' -F 'image_file=@/C/prueba3.gif'
 
 def store_new_image(image_number=None, image_file=None, image_ext=None):
     date = dt.date.today().isoformat()
@@ -159,3 +139,16 @@ def store_new_image(image_number=None, image_file=None, image_ext=None):
         image_file.read()
     )
     return f"image/pictures/{filename}"
+
+def get_storage_pictures(image_number=None):
+    query_result = query_storage(
+        "image/pictures",
+    )
+    if image_number is None:
+        return query_result["content"]
+    if image_number is not None:
+        return [
+           r
+           for r in query_result["content"]
+           if image_number in r
+        ]

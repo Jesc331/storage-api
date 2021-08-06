@@ -95,23 +95,36 @@ def new_image(*args, **kwargs):
 
 @app.post("/image/new/<image_number>")
 def new_image(image_number):
-    print(image_number)
-    print(bottle.request.files.dict)
     try:
         image_file = bottle.request.files.get("image_file")
-        print(image_file.filename)
+        extension = image_file.filename.split(".")[-1]
         payload = {
             "image_number": image_number,
             "image_file": image_file.file,
             "image_ext": image_file.filename.split(".")[-1]
         }
-        print(image_file)
-        respuesta = store_new_image(**payload)
+        if extension == "jpg" or extension == "jpeg" or extension == "png" or extension == "gif":
+            respuesta = store_new_image(**payload)
     except:
         print("Invalid data")
         raise bottle.HTTPError(400)
     raise bottle.HTTPError(201, respuesta)
 
+@app.get("/image/pictures/<code>")
+def pictures_per_id(*args,code=None, **kwargs):
+    try:
+        respuesta = get_storage_pictures(image_number=code)
+    except:
+        raise bottle.HTTPError(400)
+    raise bottle.HTTPError(200, respuesta)
+
+@app.get("/image/pictures/list")
+def get_all_pictures(*args, **kwargs):
+    try:
+        respuesta = get_storage_pictures()
+    except:
+        raise bottle.HTTPError(501, "Error")
+    raise bottle.HTTPError(200, respuesta)
 # -----------------------------COMENTARIOS-------------------------------
 @app.get("/comment/<code>")
 def comments_per_id(*args,code=None, **kwargs):
