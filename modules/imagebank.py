@@ -91,6 +91,23 @@ def get_storage_users(user_id=None):
            if user_id in r
         ]
 
+def update_user_password(user_id= None, username = None, password= None):
+    print(username, password)
+    print("Exito")
+
+    almacenable = {
+        "user_id": user_id,
+        "username": username,
+        "password": password,
+    }
+    nombre_de_archivo = f"{username}-{user_id}.json"
+    datos = store_string(
+        "image/users",
+        nombre_de_archivo,
+        json.dumps(almacenable),
+        update=True
+    )
+    return datos
 # ----------------------------------COMENTARIOS--------------------------------
 #Ejemplo
 #curl http://localhost:8081/imagebank/comment -X POST -H 'Content-Type: application/json' -d '{"comment_id":"001", "image_id":"001","name":"eduardo", "user_id":"001","description":"buena imagen me gusta el fondo que tiene"}'
