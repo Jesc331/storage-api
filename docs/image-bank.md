@@ -1,8 +1,12 @@
 # Image Bank
 ## Consiste en:
 
-Este proyecto almacena archivos con algún formato de imagen permitido(PNG, JPG, JPEG, GIF) o mejor conocidas como imágenes que serán subidas por el usuario, y se puedan consultar y visualizar las imágenes por su etiqueta que los usuarios añadirán al momento de subir sus archivos.
-Así como los usuarios puedan borrar sus propias imágenes si así lo desean, y poder tener un apartado de sus propias imágenes que han subido.
+Este proyecto almacena archivos con algún formato de imagen permitido
+(PNG, JPG, JPEG, GIF) o mejor conocidas como imágenes que serán subidas por el
+usuario, y se puedan consultar y visualizar las imágenes por su etiqueta que los
+usuarios añadirán al momento de subir sus archivos. Así como los usuarios puedan
+borrar sus propias imágenes si así lo desean, y poder tener un apartado de sus
+propias imágenes que han subido.
 
 ## Aplicación en:
 
@@ -342,6 +346,7 @@ Archivos relacionados con este proceso:
 
 ---
 # Historial de Commits
+# Solo para evaluación
 | Hash                                       | Fecha        | Descripción                            |
 |--------------------------------------------|--------------|----------------------------------------|
 | acf10d461c05b4fbe37dd275050386d93d9c9804   | Jun 28, 2021 | Se agregó la descripción del proyecto. |
