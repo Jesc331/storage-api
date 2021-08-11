@@ -55,6 +55,27 @@ def get_storage_reports(report_id=None):
            for r in query_result["content"]
            if report_id in r
         ]
+
+def update_reports(report_id = None, username = None, status = None, message = None, image_id=None):
+    print(username, password)
+    print("Exito")
+
+    almacenable = {
+        "report_id": report_id,
+        "username": username,
+        "status": status,
+        "message": message,
+        "image_id": image_id
+    }
+    nombre_de_archivo = f"{report_id}-{username}-{status}.json"
+    datos = store_string(
+        "image/reports",
+        nombre_de_archivo,
+        json.dumps(almacenable)
+        update=True
+    )
+    return datos
+
 # ----------------------------------usuarios--------------------------------
 # Funcion para añadir un usuario
 def add_user(user_id = None, username = None, password = None):

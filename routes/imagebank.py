@@ -45,6 +45,25 @@ def report(*args, **kwargs):
         raise bottle.HTTPError(400, "Invalid data")
     raise bottle.HTTPError(201, respuesta)
 
+@app.post("/report/update/<report_id>")
+def update_movie_data(*args, **kwargs):
+    payload = bottle.request.json
+    print(payload)
+    try:
+        report_id = str(payload['report_id'])
+        username = str(payload['username'])
+        status = str(payload['status'])
+        message = str(payload['message'])
+        image_id = str(payload['image_id'])
+        print("datos validos")
+        respuesta = update_reports(**payload)
+        print(respuesta)
+        print("Apunto de terminar")
+    except:
+        print("Datos invalidos")
+        raise bottle.HTTPError(400, "Invalid data")
+    raise bottle.HTTPError(201, "User data has been updated")
+
 # -----------------------------USUARIOS-------------------------------
 @app.get("/user/<code>")
 def users_per_id(*args,code=None, **kwargs):
@@ -79,7 +98,7 @@ def store(*args, **kwargs):
         raise bottle.HTTPError(400, "Invalid data")
     raise bottle.HTTPError(201, respuesta)
 
-@app.post("/user/<user_id>")
+@app.post("/user/update/<user_id>")
 def update_movie_data(*args, **kwargs):
     payload = bottle.request.json
     print(payload)
