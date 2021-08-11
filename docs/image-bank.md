@@ -10,10 +10,14 @@ propias imágenes que han subido.
 
 ## Aplicación en:
 
-Podemos esperar que se aplique en alguna empresa que venda o comercialice productos para el uso público en la cual se requiere saber la opinión acerca del producto para generar actualización o modificaciones al producto con el fin de mejorarlo.
+Podemos esperar que se aplique en alguna empresa que venda o comercialice
+productos para el uso público en la cual se requiere saber la opinión acerca
+del producto para generar actualización o modificaciones al producto con el
+fin de mejorarlo.
 
 # Estructura deseada
-Se deberá de crear un banco de imágenes, lo cual debemos de pensar que entidades *necesitaremos*:
+Se deberá de crear un banco de imágenes, lo cual debemos de pensar que
+entidades *necesitaremos*:
 
 - Usuario (user_id, user, password)
 - Image (name, file, owner, image_id, category, original_description)
@@ -60,7 +64,8 @@ Se deberá de crear un banco de imágenes, lo cual debemos de pensar que entidad
  ---
 ## Ruta relativa para los Archivos
 
-Se propone que se siga la siguiente estructura para los documentos para así mismo contruir las rutas.
+Se propone que se siga la siguiente estructura para los documentos para
+así mismo contruir las rutas.
 
 <div>
 <p style = 'text-align:center;'>
@@ -68,16 +73,23 @@ Se propone que se siga la siguiente estructura para los documentos para así mis
 </p>
 </div>
 
-La intención de presentar esta imagen es que se sepa donde se deban dirigir los documentos para cada proceso.
+La intención de presentar esta imagen es que se sepa donde se deban dirigir
+los documentos para cada proceso.
 
 ## Modo de uso
-Con las siguientes descripciones se busca que se te mantenga en claro lo que se quiere lograr en esta API
+Con las siguientes descripciones se busca que se te mantenga en claro lo que
+se quiere lograr en esta API
 
-El usuario deberá de crear un usuario para usar la API, ya que el nombre del usuario registrado también servirá como etiqueta para buscar imágenes de alguna persona en particular y almacenar las imágenes correspondientes.
+El usuario deberá de crear un usuario para usar la API, ya que el nombre
+del usuario registrado también servirá como etiqueta para buscar imágenes
+de alguna persona en particular y almacenar las imágenes correspondientes.
 
-Habrá una sección en la cual se podrán crear reportes para avisar a los administradores sobre imágenes inapropiadas para que sean eliminadas así como también podrían usar esta función para reportar bugs o errores.
+Habrá una sección en la cual se podrán crear reportes para avisar a los
+administradores sobre imágenes inapropiadas para que sean eliminadas así como
+también podrían usar esta función para reportar bugs o errores.
 
-Por último una página de inicio donde habrá una barra buscadora donde podrán visualizar y buscar las imágenes de otros usuarios.
+Por último una página de inicio donde habrá una barra buscadora donde podrán
+visualizar y buscar las imágenes de otros usuarios.
 
 # Procesos dentro de la API
 
@@ -89,15 +101,21 @@ Archivos relacionados con este proceso:
 
 | Path                    | Descripción                                         |
 | ----------------------- | --------------------------------------------------- |
-| `/auth/login`         | Será el archivo encargado de **recibir la información y compararlo en la validación para que el usuario pueda acceder a la API**                           |
-| `/auth/user_storage` | Se almacenará la información de los usuarios en un JSON con la **siguiente estructura: ```{"user": "exampleName","password":"examplePass"``` (se requiere que este archivo este cifrado.)**   |
-| `/auth/validate_user`  | Este archivo **ejecutará una validación de los datos recibidos del archivo "login.py"** para dar el acceso a usuarios registrados o denegar el acceso usuarios no registrados en su contraparte |
+| `/auth/login`         | Será el archivo encargado de **recibir la información
+y compararlo en la validación para que el usuario pueda acceder a la API**                           |
+| `/auth/user_storage` | Se almacenará la información de los usuarios en un JSON
+ con la **siguiente estructura: ```{"user": "exampleName","password":"examplePass"``` (se requiere que este archivo este cifrado.)**   |
+| `/auth/validate_user`  | Este archivo **ejecutará una validación de los datos
+recibidos del archivo "login.py"** para dar el acceso a usuarios
+registrados o denegar el acceso usuarios no registrados en su contraparte |
 
  ---
 
  ## Subir una imagen
- 1. Se le pedirá que inicie sesión(ingresar con su usuario y contraseña previamente registrado)
- 2. Se le pedirá seleccionar el archivo que desea subir (debe de cumplir con los siguientes formatos: JPEG, JPG, GIF o PNG)
+ 1. Se le pedirá que inicie sesión(ingresar con su usuario y contraseña
+   previamente registrado)
+ 2. Se le pedirá seleccionar el archivo que desea subir
+ (debe de cumplir con los siguientes formatos: JPEG, JPG, GIF o PNG)
  3. Subir archivo y esperar la confirmación
 
  Archivos relacionados con este proceso:
@@ -105,14 +123,22 @@ Archivos relacionados con este proceso:
  | Path                    | Descripción                                         |
  | ----------------------- | --------------------------------------------------- |
  | `/auth/login`         | Será el archivo encargado de **recibir la información y compararlo en la validación para que el usuario pueda acceder a la API**                           |
- | `/main/home`  | Esta es la página de inicio donde se presentaran las imágenes que se han subido recientemente, una barra buscadora y un botón para subir nuestras imágenes que redirigirá a la siguiente dirección '/main/upload' |
- | `/main/upload` | Se presentará una interfaz con un formato que será rellenado con la siguiente información: *Nombre del Archivo*(será extraído del documento que seleccione el usuario), *PATH*(se extraerá del archivo seleccionado), *Categoría*(El usuario deberá seleccionar las distintas opciones de un 'ComboBox')   |
+ | `/main/home`  | Esta es la página de inicio donde se presentaran las imágenes
+que se han subido recientemente, una barra buscadora y un botón para subir
+nuestras imágenes que redirigirá a la siguiente dirección '/main/upload' |
+ | `/main/upload` | Se presentará una interfaz con un formato que será rellenado
+  con la siguiente información: *Nombre del Archivo*
+  (será extraído del documento que seleccione el usuario),
+  *PATH*(se extraerá del archivo seleccionado), *Categoría*
+  (El usuario deberá seleccionar las distintas opciones de un 'ComboBox')   |
 
 ---
 
 ## Borrar una imagen
-1. Se le pedirá que inicie sesión(ingresar con su usuario y contraseña previamente registrado).
-2. Se le pedirá seleccionar una de sus imágenes que el usuario haya subido con anterioridad.
+1. Se le pedirá que inicie sesión(ingresar con su usuario y contraseña
+  previamente registrado).
+2. Se le pedirá seleccionar una de sus imágenes que el usuario haya subido
+con anterioridad.
 3. Se le preguntará que confirme que si **realmente quiere borrar la imagen seleccionada**.
 4. Se borrará la imagen seleccionada-
 
@@ -120,25 +146,39 @@ Archivos relacionados con este proceso:
 
 | Path                    | Descripción                                         |
 | ----------------------- | --------------------------------------------------- |
-| `/auth/login`         | Será el archivo encargado de **recibir la información y compararlo en la validación para que el usuario pueda acceder a la API**                           |
-| `/main/profile/user_home`  | En esta página se desplegará una interfaz donde el usuario podrá ver su 'nickname' y las imágenes que ha subido hasta el momento y un botón en la parte superior de la página que activará el evento para 'borrar imágenes' y otro más para `crar reportes` |
-| `/main/profile/delete` | Se le mostrara un 'ComboBox' de las imágenes que ha subido y seleccionara las que desea borrar luego tendrá que confirmar para borrar las imágenes.  |
+| `/auth/login`         | Será el archivo encargado de **recibir la información
+ y compararlo en la validación para que el usuario pueda acceder a la API**                           |
+| `/main/profile/user_home`  | En esta página se desplegará una interfaz donde
+el usuario podrá ver su 'nickname' y las imágenes que ha subido hasta el momento
+ y un botón en la parte superior de la página que activará el evento para
+ 'borrar imágenes' y otro más para `crar reportes` |
+| `/main/profile/delete` | Se le mostrara un 'ComboBox' de las imágenes que ha
+subido y seleccionara las que desea borrar luego tendrá que confirmar para
+borrar las imágenes.  |
 
 ---
 
 ## Crear un reporte
-1. Se le pedirá que inicie sesión(ingresar con su usuario y contraseña previamente registrado).
+1. Se le pedirá que inicie sesión(ingresar con su usuario y contraseña
+  previamente registrado).
 2. Se le pedirá dirigirse a su perfil donde podrá ver un **botón** para crear reportes.
-3. Se desplegara un recuadro donde rellenara un formulario con los siguientes datos: **user, id_image y un mensaje acerca del problema**.
+3. Se desplegara un recuadro donde rellenara un formulario
+con los siguientes datos: **user, id_image y un mensaje acerca del problema**.
 4. Pulsar el **botón** de enviar y esperar respuesta del administrador
 
 Archivos relacionados con este proceso:
 
 | Path                    | Descripción                                         |
 | ----------------------- | --------------------------------------------------- |
-| `/auth/login`         | Será el archivo encargado de **recibir la información y compararlo en la validación para que el usuario pueda acceder a la API**                           |
-| `/main/profile`  | En esta página se desplegará una interfaz donde el usuario podrá ver su 'nickname' y las imágenes que ha subido hasta el momento y un botón en la parte superior de la página que activara el evento para ´borrar imágenes´ y otro más para `crear reportes` |
-| `/main/profile/reportTools` | Se les redirigirá a otra página donde estará el formato de reporte correspondiente donde contener lo siguiente 3 `textbox` para el  `id de la imagen', 'nombre del usuario' y 'mensaje del reporte'   |
+| `/auth/login`         | Será el archivo encargado de
+**recibir la información y compararlo en la validación para que el usuario pueda acceder a la API**                           |
+| `/main/profile`  | En esta página se desplegará una interfaz donde
+el usuario podrá ver su 'nickname' y las imágenes que ha subido
+hasta el momento y un botón en la parte superior de la página
+que activara el evento para ´borrar imágenes´ y otro más para `crear reportes` |
+| `/main/profile/reportTools` | Se les redirigirá a otra página donde estará
+el formato de reporte correspondiente donde contener lo siguiente 3 `textbox`
+para el  'id de la imagen', 'nombre del usuario' y 'mensaje del reporte'    |
 ---
 # Estructuras de solicitud y respuesta
 
@@ -258,7 +298,8 @@ Archivos relacionados con este proceso:
 # Implementacion de rutas para los recursos
 `POST /auth/user_storage`
 - Recibe una estructura para registrar un usuario nuevo.
-- 201, registra al usuario y regresa un mensaje informando que se ha registrado exitosamente.
+- 201, registra al usuario y regresa un mensaje informando que se ha
+registrado exitosamente.
 - D.O.M. regresa un mensaje de falla del servidor(500) o falla del usuario(400).
 
 <div>
@@ -296,7 +337,8 @@ Archivos relacionados con este proceso:
 
 `POST /main/upload`
 - Recibe una estructura para subir una imagen nueva.
-- 201, sube correctamente la imagen y se guarda en el almacenamiento de la API y muestra un mensaje de que el proceso se realizó correctamente.
+- 201, sube correctamente la imagen y se guarda en el almacenamiento
+de la API y muestra un mensaje de que el proceso se realizó correctamente.
 - D.O.M. regresa un mensaje de falla del servidor(500) o falla del usuario(400)
 
 <div>
@@ -309,7 +351,8 @@ Archivos relacionados con este proceso:
 
 `GET /main/profile/user_home`
 - Recibe una petición para mostrar la página del perfil del usuario.
-- 201, se desplega una página en la cual podra ver las imagenes que ha subido ese usuario y un botón para eliminar y crear reportes.
+- 201, se desplega una página en la cual podra ver las imagenes que
+ha subido ese usuario y un botón para eliminar y crear reportes.
 - D.O.M regresa un mensaje de falla del servidor(500) o falla del usuario(400)
 
 <div>
