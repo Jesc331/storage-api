@@ -20,6 +20,7 @@ app = BottleJson()
 
 app.mount("/auth", routes.auth.app)
 app.mount("/imagebank", routes.imagebank.app)
+app.mount("/routes", routes.imagebank.app)
 
 
 @app.get("/")

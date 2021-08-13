@@ -7,20 +7,6 @@ from modules.storage import (
     query_storage, get_storage_file
 )
 
-def get_image_to_store(collection, filename):
-    target = str(Path(collection) / filename)
-    blob = get_blob(target)
-    if blob.exists():
-        raise Exception("Image already exists")
-    return blob
-
-def get_storage_image(path=""):
-    target = (storage_dir / path)
-    if not target.exists() or not target.is_file():
-        raise Exception("Does not exists")
-    mime = (guess_type(str(target)) or ["application/octet-stream"])[0]
-    return mime, target.read_bytes()
-
 # ----------------------------------Reportes--------------------------------
 def add_report(report_id = None, username = None, status = None, message = None, image_id=None):
 
@@ -35,7 +21,7 @@ def add_report(report_id = None, username = None, status = None, message = None,
         "image_id": image_id
     }
 
-    nombre_de_archivo = f"{report_id}-{username}-{status}.json"
+    nombre_de_archivo = f"{report_id}-{username}-{status}-{image_id}.json"
     datos = store_string(
         "image/reports",
         nombre_de_archivo,
@@ -71,7 +57,7 @@ def update_reports(report_id = None, username = None, status = None, message = N
     datos = store_string(
         "image/reports",
         nombre_de_archivo,
-        json.dumps(almacenable)
+        json.dumps(almacenable),
         update=True
     )
     return datos
@@ -126,7 +112,7 @@ def update_user_password(user_id= None, username = None, password= None):
         "image/users",
         nombre_de_archivo,
         json.dumps(almacenable),
-        update=True
+        update=True,
     )
     return datos
 # ----------------------------------COMENTARIOS--------------------------------

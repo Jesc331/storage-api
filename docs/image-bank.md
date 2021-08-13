@@ -3,7 +3,7 @@
 
 Este proyecto almacena archivos con algún formato de imagen permitido
 (PNG, JPG, JPEG, GIF) o mejor conocidas como imágenes que serán subidas por el
-usuario, y se puedan consultar y visualizar las imágenes por su etiqueta que los
+usuario, y se puedan consultar y visualizar las imágenes por su categoria que los
 usuarios añadirán al momento de subir sus archivos. Así como los usuarios puedan
 borrar sus propias imágenes si así lo desean, y poder tener un apartado de sus
 propias imágenes que han subido.
@@ -32,10 +32,13 @@ entidades *necesitaremos*:
 
 ---
 # Consulta de Datos
+- Solcitar un usuario
+  - Por ID de usuario
+  - Por username
 - Solicitar una imágen
-  - por el id de la imagen
-  - por el usuario
-  - por la categoria
+  - por el id de la imágen
+  - por la fecha de subida
+  - por extensión
 - solicitar reporte
   - por el usuario
   - por el id del reporte
@@ -386,6 +389,10 @@ ha subido ese usuario y un botón para eliminar y crear reportes.
 <img src="https://github.com/Jesc331/storage-api/blob/master/storage/images_resources/report_message_ok2.png"  width="480px">
 </p>
 </div>
+---
+
+# Casos De uso
+
 
 ---
 # Historial de Commits
