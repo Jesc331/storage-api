@@ -394,6 +394,20 @@ ha subido ese usuario y un botón para eliminar y crear reportes.
 
 # Casos De uso
 
+## Como subir una imágen a la API utilizando CURL
+Este es la función principal que necesitaremos en la API, con ello podremos subir imágenes utilizando la siguiente estructura donde se debera especificar la ruta muy importante poner un "@" al inicio y sin caracteres especiales como ":$·" y procurar que el ID no se repita ya que fallara el CURL ya que no se permiten los ID repetidos.
+
+### Estructura del CURL
+```
+curl http://localhost:8081/imagebank/image/new/005 \
+-X POST \
+-H 'Content-Type: multipart/form-data' \
+-F 'image_file=@/C/prueba3.gif'
+```
+Con -X especificamos el metodo
+Con -H escificamos el header
+Con -F espificamos la ruta de nuestro archivo asignando a la variable "image_file"
+---
 
 ---
 # Historial de Commits
