@@ -104,13 +104,14 @@ Archivos relacionados con este proceso:
 
 | Path                    | Descripción                                         |
 | ----------------------- | --------------------------------------------------- |
-| `/auth/login`         | Será el archivo encargado de **recibir la información
+| `/user/login`         | Será el archivo encargado de **recibir la información
 y compararlo en la validación para que el usuario pueda acceder a la API**                           |
-| `/auth/user_storage` | Se almacenará la información de los usuarios en un JSON
- con la **siguiente estructura: ```{"user": "exampleName","password":"examplePass"``` (se requiere que este archivo este cifrado.)**   |
-| `/auth/validate_user`  | Este archivo **ejecutará una validación de los datos
+| `/user/list` | Se almacenará la información de los usuarios en un JSON
+ con la **siguiente estructura: ```{"user_id": "001","username": "exampleName","password":"examplePass"``` (se requiere que este archivo este cifrado.)**   |
+| `/user/validate_user`  | Este archivo **ejecutará una validación de los datos
 recibidos del archivo "login.py"** para dar el acceso a usuarios
 registrados o denegar el acceso usuarios no registrados en su contraparte |
+| `/user/<code>`  | Esta dirección es para hacer una consulta y extraer la información de un usuario segun los parametros definidos en la consulta. |
 
  ---
 
@@ -123,13 +124,13 @@ registrados o denegar el acceso usuarios no registrados en su contraparte |
 
  Archivos relacionados con este proceso:
 
- | Path                    | Descripción                                         |
- | ----------------------- | --------------------------------------------------- |
- | `/auth/login`         | Será el archivo encargado de **recibir la información y compararlo en la validación para que el usuario pueda acceder a la API**                           |
+ | Path                    | Descripción                                       |
+ | ----------------------- | ------------------------------------------------- |
+ | `/user/login`         | Será el archivo encargado de **recibir la información y compararlo en la validación para que el usuario pueda acceder a la API**   |
  | `/main/home`  | Esta es la página de inicio donde se presentaran las imágenes
 que se han subido recientemente, una barra buscadora y un botón para subir
 nuestras imágenes que redirigirá a la siguiente dirección '/main/upload' |
- | `/main/upload` | Se presentará una interfaz con un formato que será rellenado
+ | `/image/new` | Se presentará una interfaz con un formato que será rellenado
   con la siguiente información: *Nombre del Archivo*
   (será extraído del documento que seleccione el usuario),
   *PATH*(se extraerá del archivo seleccionado), *Categoría*
@@ -179,7 +180,7 @@ Archivos relacionados con este proceso:
 el usuario podrá ver su 'nickname' y las imágenes que ha subido
 hasta el momento y un botón en la parte superior de la página
 que activara el evento para ´borrar imágenes´ y otro más para `crear reportes` |
-| `/main/profile/reportTools` | Se les redirigirá a otra página donde estará
+| `/imagebank/report` | Se les redirigirá a otra página donde estará
 el formato de reporte correspondiente donde contener lo siguiente 3 `textbox`
 para el  'id de la imagen', 'nombre del usuario' y 'mensaje del reporte'    |
 ---
@@ -338,7 +339,7 @@ registrado exitosamente.
 </p>
 </div>
 
-`POST /main/upload`
+`POST /image/new`
 - Recibe una estructura para subir una imagen nueva.
 - 201, sube correctamente la imagen y se guarda en el almacenamiento
 de la API y muestra un mensaje de que el proceso se realizó correctamente.
