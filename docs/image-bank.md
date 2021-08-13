@@ -390,25 +390,97 @@ ha subido ese usuario y un botón para eliminar y crear reportes.
 <img src="https://github.com/Jesc331/storage-api/blob/master/storage/images_resources/report_message_ok2.png"  width="480px">
 </p>
 </div>
----
 
-# Casos De uso
+---
+# Casos De uso 1
 
 ## Como subir una imágen a la API utilizando CURL
 Este es la función principal que necesitaremos en la API, con ello podremos subir imágenes utilizando la siguiente estructura donde se debera especificar la ruta muy importante poner un "@" al inicio y sin caracteres especiales como ":$·" y procurar que el ID no se repita ya que fallara el CURL ya que no se permiten los ID repetidos.
 
 ### Estructura del CURL
 ```
-curl http://localhost:8081/imagebank/image/new/005 \
+curl http://localhost:8081/imagebank/register \
 -X POST \
 -H 'Content-Type: multipart/form-data' \
 -F 'image_file=@/C/prueba3.gif'
 ```
 Con -X especificamos el metodo
-Con -H escificamos el header
-Con -F espificamos la ruta de nuestro archivo asignando a la variable "image_file"
+Con -H especificamos el header
+Con -F especificamos la ruta de nuestro archivo asignando a la variable "image_file"
 ---
+# Casos De uso 2
 
+## Como crear un usuario en la API utilizando CURL
+Con esta función se plantea crear usuarios con su respectiva user_id, username y contraseñas para despues poder logearse en la pagina en la interfaz que se plantea tener un futuro, pero por ahora se pueden crear usuarios sin problemas.
+
+### Estructura del CURL
+```
+curl http://localhost:8081/imagebank/register \
+-X POST \
+-H 'Content-Type: application/json' \
+-d '{"user_id":"001", "username":"eduardo", "password":"hola123"}'
+```
+Con -X especificamos el metodo
+Con -H especificamos el header
+Con -d especificamos los datos con los que se creara el usuario, es importante no dejar ningún dato incompleto ya que obtendremos un error de datos invalidos
+---
+---
+# Casos De uso 3
+
+## Como crear un reporte en la API utilizando CURL
+Con esta función se plantea que los usuarios puedan reportar imagenes inapropiadas para tener un control con lo que se suba en la API y asi tambien los usuarios se sientan escuchados y que tenga algo de control en la API.
+
+### Estructura del CURL
+```
+curl http://localhost:8081/imagebank/report \
+-X POST \
+-H 'Content-Type: application/json' \
+-d '{"report_id":"007", "username":"jesc331", "status":"open", "message":"esta imagen es inapropiada", "image_id":"001"}'
+```
+Con -X especificamos el metodo
+Con -H especificamos el header
+Con -d especificamos los datos con los que se creara el reporte, es importante especificar el id de la imágen, además de adjuntar un mensaje hablando del porque se debe de borrar para que los administradores puedan dar una justificación al respecto en caso de que se borre la imagen o no.
+---
+# Casos De uso 4
+
+## Como consultar todos los usuarios registrados en la API utilizando CURL
+Con esta función se plantea que los administradores puedan obtener todos los usuarios registrados en la API, asi tambien en un futuro se plantea que se use esta funcion para que otros usuarios busquen a otros usuarios.
+
+### Estructura del CURL
+```
+curl http://localhost:8081/imagebank/user/list -X GET
+
+```
+Con -X especificamos el metodo
+Se especifica solo la ruta de "imagebank/user/list" la cual ejecutara una consulta sin parametros especificos y de esta manera devolvera todos los usuarios registrados.
+---
+# Casos De uso 5
+
+## Como consultar a un usuario registrado con parametros especificos en la API utilizando CURL
+Con esta función se plantea que podamos buscar a los usuarios con alguno de los siguientes parametros: 'user_id' o 'username'.
+
+### Estructura del CURL
+```
+curl http://localhost:8081/imagebank/user/<user_id or username> -X GET
+
+```
+Con -X especificamos el metodo
+Se especifica solo la ruta de "imagebank/user/ y despues algun user_id como por ejemplo "001" o un username como "jesc33", para obtener los datos de ese usuario en especifico.
+---
+---
+# Casos De uso 6
+
+## Como consultar una imagen en espcifico con distintos parametros
+Con esta función se plantea que los administradores o usuarios puedan buscar imágenes con distintos parametros como: image_id, fecha o extensión del archivo esto para que podamos encontrar las imagenes que necesitemos especificamente.
+Esto mismo se podrá utilizar para el buscador de imágenes cuando se tenga frontend.
+
+### Estructura del CURL
+```
+curl http://localhost:8081/imagebank/image/pictures/<iamge_id or date or extension> -X GET
+
+```
+Con -X especificamos el metodo
+Se especifica solo la ruta de "imagebank/image/pcitures y despues algun image_id como por ejemplo "001" o una fecha como "2021-08-02 o alguna extension de las permitidas como: jpg, jpeg, png o gif. Para obtener los datos de esa imagen  en especifico.
 ---
 # Historial de Commits
 # Solo para evaluación
