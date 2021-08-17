@@ -482,57 +482,52 @@ curl http://localhost:8081/imagebank/image/pictures/<iamge_id or date or extensi
 Con -X especificamos el metodo
 Se especifica solo la ruta de "imagebank/image/pcitures y despues algun image_id como por ejemplo "001" o una fecha como "2021-08-02 o alguna extension de las permitidas como: jpg, jpeg, png o gif. Para obtener los datos de esa imagen  en especifico.
 ---
+# Planeación del FrontEnd
+Con esto se plantea llevar a cabo el desarrollo del frontend de nuestra API, para que tenga una vista más agradable con el usuario y se pueda utilizar sin problemas, pero antes de empezar con el desarrollo se tendrá que tomar en cuenta los siguientes puntos y que se cumplan sin omitir ninguno de ellos:
+  
+- El servidor debe poder procesar las consultas para GET, UPDATE, POST y DELETE de las siguientes variables dentro de la API: usuarios, reportes, imágenes y cometarios.
+- Que el inicio de sesión de la página funcione correctamente además de que se asignes los permisos correspondientes.
+- Que las validaciones para subir imágenes o archivos con formatos incorrectos estén funcionando para evitar archivos incorrectos en el servidor.
+- Que las validaciones para que no haya usuarios duplicados estén funcionando correctamente.
+
+Sin los puntos mencionados la API funcionará, pero no como se espera, lo cual generará errores y mantenimientos constantes a la aplicación lo cual sería un gasto innecesario de horas de trabajo, aclarado esto empezare a mencionar lo que se plantea desarrollar para este proyecto.
+  
+Se deberá crear una página web funcional con base de archivos HTML y Javascript, para poder utilizar las funciones que se ha desarrollado y que tenga conexión con nuestro servidor, asi mismo agregar estilo a la página web por medio de un lenguaje de diseño como CSS, esto es la base de nuestros frontend. 
+
+---
+  
+**Para el login se plantea lo siguiente:**
+
+Que se presenten dos campos de textos en los que vayan a escribirse las credenciales del usuario que son “usuario” y “contraseña”, y con un botón debajo para poder acceder en la API una vez escrita tu información, además de otro botón para “registrarse” si es que no tienes un usuario valido.
+  
+Se piensa que tenga los colores que contrasten con el logo que represente la API además de que el logo aparezca en la esquina inferior derecha junto con el nombre de la API, esto aún no está definido, pero es un detalle que se planea en un futuro.
+
+<img src="https://github.com/Jesc331/storage-api/blob/master/storage/images_resources/login_layout.png" width="480px">
+
+---
+**Para la página de inicio se plantea lo siguiente:**
+  
+Se plantea que se observen las imágenes de otros usuarios en el inicio como una especie de vista previa, y en la parte de arriba una barra de búsqueda, para hacer una búsqueda específica y arriba de la barra de búsqueda en el parte superior derecho un hipervínculo al perfil del usuario. Esta página debe de ser capaz de realizar consultas y ejecutar funciones para obtener imágenes específicas y subir nuevas imágenes.
+  
+<img src="https://github.com/Jesc331/storage-api/blob/master/storage/images_resources/home_layout.png" width="480px">
+---
+**Para la página de subir imágenes se plantea lo siguiente:**
+  
+Al momento de hacer clic en el botón de subir imágenes, que se presenta en el inicio de la API se abrirá esta página, donde podremos rellenar la información que se requiere para subir una imagen y en caso de que no se cumplan los requisitos, salte un error por parte del usuario, se plantea que se despliegue el explorador de archivos al momento que se trate de seleccionar la imagen específica y que se seleccionen las categorías.
+
+<img src="https://github.com/Jesc331/storage-api/blob/master/storage/images_resources/uploaded_layout.png" width="480px">
+---
+**Para la página de reportes:**
+
+  Para poder acceder a este apartado primero deberá de hacer clic en el atajo del perfil que están en la página inicial, y ahí en la página del perfil podrás ver el botón de crear reportes, donde se podrá visualizar 3 cuadros de textos, una para escribir el usuario, el ID de la imagen y un reporte de retroalimentación y el botón de enviar en caso de que falte alguna información salte un error por parte del usuario, además el usuario podrá ver el estatus de otros reportes suyos en caso de que tenga otros más. 
+
+ <img src="https://github.com/Jesc331/storage-api/blob/master/storage/images_resources/reports_layout.png" width="480px"> 
+---
+**Para la página de crear usuarios:**
+
+Para crear un usuario en nuestra API tendremos que acceder primero a la página del login y hacer clic en el botón de registro y que te mandara  a una página donde encontraras tres campos de texto que se deberán de llenar correctamente y en caso de que falte alguna información salte un error, asi como si el usuario se repite con uno ya registrado se saltara un error y se le dará un menaje al usuario de que por favor cambie el usuario y por ultimo si la contraseña no cumple con ciertas reglas que salte otro error y dándole un mensaje al usuario de que mejore la seguridad de la contraseña.
+  
+<img src="https://github.com/Jesc331/storage-api/blob/master/storage/images_resources/login_register_layour.png" width="480px">
+---
 # Historial de Commits
-# Solo para evaluación
-| Hash                                       | Fecha        | Descripción                            |
-|--------------------------------------------|--------------|----------------------------------------|
-| acf10d461c05b4fbe37dd275050386d93d9c9804   | Jun 28, 2021 | Se agregó la descripción del proyecto. |
-| 152be431f1969780b0bc749f90b34e78c1e87f5c   | Jun 28, 2021 | Se agregó la primera descripción acerca del modo de  uso de la API.|
-| 347bcb37533bddd9c52f0cef5c2c9b129cbc0ffb   | Jun 28, 2021 | Se agregó la primera descripción acerca de como iniciar sesion en la API |
-| 07f1450e38d507ca06c7a692f7fd9ff032e250d9   | Jun 28, 2021 | Se agregaron mas detalles en la descripcion acerca de como iniciar sesion en la API |
-| db1e012f0480be0f7a1bff9543e77f177d7cb5b3   | Jun 29, 2021 | Se corrigieron detalles en la descripción del inicio de sesión en la API |
-| c15cab512f8577f680e6fa8d7e0907c1ad41f44e   | Jun 28, 2021 | Se agregó la descripción de que archivos se verían involucrados en el inicio de sesión |         
-| c15cab512f8577f680e6fa8d7e0907c1ad41f44e   | Jun 28, 2021 | Se corrigieron detalles estéticos en archivo 'image-bank.md' |
-| 2c4ab74aeed2ace15f87bfda73fae564349dc94b   | Jun 28, 2021 | Se corrigieron más detalles estéticos            |
-| 649fcbe788a4bd71da5ef819f29e749b2edf5bfd   | Jun 28, 2021 | Solo corrección en detalles estéticos |
-| 2f464930c6e449b0bba0a9fccd0e14637a5aebed   | Jun 29, 2021 | Se agregó descripción de la estructura deseada(solo de forma textual).|
-| 96b17a3c2fcb37deef00e6267ca94bd81edaa148   | Jun 29, 2021 | Solo se corrigieron algunos errores en el texto. |
-| 5c2653c3aefd9f7ca33221aded696b69c45afc0b   | Jun 28, 2021 | Se modificaron los archivos que se utilizan en la API para tener relación con la estructura deseada. |
-| 1d06e9d7c5e984198766894a9889e2ef1d64f2ce   | Jun 29, 2021 | Se corrigieron detalles en las acciones dentro de la API |
-| 8bd63e34199a32bf7d6b5724d03c93e0d2f3bc28   | Jun 29, 2021 | Se agregó la descripción del proceso "como borrar una imagen dentro de la API" |         
-| f5d117d1cc64b7b31f33a53dd78340f9089dadc7   | Jun 29, 2021 | Se corrigieron detalles estéticos en archivo 'image-bank.md' |
-| 3c6affb55c27c1147596b4eb5a9f51f067189937   | Jul 01, 2021 | Se agregó la descripción de las acciones que se pueden realizar siendo administrador o usuario |
-| a8dd434d4cb380090a7ecf6104e3c4c42a524169   | Jul 01, 2021 | Se corrigió la descripción de las acciones que puede hacer el usuario en la API|         
-| c107384531a102588fa10c069f2250f157a07d46   | Jul 01, 2021 | Se modificaron y se añadieron nuevas entidades que se necesitarán en la API |
-| 157cb9388b79239a93d860970379be31094a90cd   | Jul 05, 2021 | Se añadió un ejemplo de aplicación de la API            |
-| d29f7422a972758997a7184be3703eab81900499   | Jul 06, 2021 | Se añadió la descripción de las relaciones en la base de datos |
-| 2fe9222ce0851adc39d74343184dec490c303c26   | Jul 06, 2021 | Se añadió una carpeta con imágenes necesarias para 'image-bank.md'|
-| efa9a327e513ff396e46265bddcf3a1454cc01d9   | Jul 06, 2021 | Se añadió un diagrama entidad relación |
-| 2b67b2b83d531a6a119b46046943ab93f36ab664   | Jul 06, 2021 | Cambios en el diseño al diagrama |
-| 1d06e9d7c5e984198766894a9889e2ef1d64f2ce   | Jul 06, 2021 | Cambios al diseño del diagrama v2 |
-| ab357d60f6d503860230d1102026887979fda5a8   | Jul 06, 2021 | Se añadió las consultas hacia los datos |         
-| a008dec7fc6c4dbe9b8bb503bdbbfa3d7b300d8e   | Jul 06, 2021 | Permisos y acciones CRUD |
-| e189a4a61d954d524c9056ef16b3ef8b2c9e8c78   | Jul 06, 2021 | Permisos y acciones CRUD v2 |
-| 1d06e9d7c5e984198766894a9889e2ef1d64f2ce   | Jun 29, 2021 | Se corrigieron detalles en las acciones dentro de la API |
-| 8bd63e34199a32bf7d6b5724d03c93e0d2f3bc28   | Jun 29, 2021 | Se agregó la descripción del proceso "como borrar una imagen dentro de la API" |         
-| f5d117d1cc64b7b31f33a53dd78340f9089dadc7   | Jun 29, 2021 | Se corrigieron detalles estéticos en archivo 'image-bank.md' |
-| 3c6affb55c27c1147596b4eb5a9f51f067189937   | Jul 01, 2021 | Se agregó la descripción de las acciones que se pueden realizar siendo administrador o usuario |
-| 03e854fec44a439e6cd1a06f1a538fa0ac82d3bd   | Jul 07, 2021 | Acciones que se pueden realizar en la API y permisos necesarios|         
-| c02b0d90969e131db1267c77e7b98fc45eb9d71b   | Jul 07, 2021 | Procesos dentro de la API |
-| 98cc2a1e174f8a65f0ad2b9bc5d35478fc6d75df   | Jul 07, 2021 | Se añadió una imagen con un diagrama de rutas |
-| 108f452ba02183b0b8e51382f53874ab9a89a096   | Jul 07, 2021 | Se añadió un comentario de ruta relativo y una imagen al respecto |
-| 539e5fa32aabd76ca19a5adcf58ea701e55329d8   | Jul 07, 2021 | Estructura de solicitud y respuesta |
-| 7b9876d349cf0448ee695248ed649efedfa22c54   | Jul 07, 2021 | Actualización de la descripción del apartado "Modo de Uso" |
-| df8bc6a4fd3183770d4699f50b9ee2b19591c270   | Jul 07, 2021 | Se añadió la implementación de rutas para los recursos |
-| d543e067aae48e4007da3ebf1de293517262b056   | Jul 08, 2021 | Se añadieron moqups acerca del aspecto visual de la API |
-| 832649d58cc5b57594d7a9f742fef9830db52ea2   | Jul 08, 2021 | Se añadieron moqups acerca del aspecto visual de la API v2 |         
-| d96a4d3c20c7209ff3a3278eadb9b3c9f68cf1ab   | Jul 08, 2021 | Se añadió el diseño relativo de user storage y login |
-| 1524f70ba97fffe7e3c738c1530340da9adf73e1   | Jul 08, 2021 | Se añadió el diseño relativo de user storage y login v2 |
-| 9883eb307fffabaddb5164e79c8396d7758f7901   | Jul 08, 2021 | Se añadió el diseño relativo de user storage y login v3 |
-| d0d826f198c1bacec915982be5f019b7d95cf31b   | Jul 08, 2021 | Prueba de Error|         
-| 1886e7c1e9fd06311f67357a5588540e4a53cd70   | Jul 08, 2021 | Diseños moqups Login y Register |
-| ff371fc1787516a9e61be30bffac4082a2b263bc   | Jul 08, 2021 | Modificaciones de diseño a los moqups de Login y User Storage |
-| 0548bca34f086820892f1efe81622b0d9e73266d   | Jul 08, 2021 | Se añadieron los maqups de home |
-| 80c9c3ad15127f739689208adc67cfadaa1b92fb   | Jul 08, 2021 | Se añadió moqups del diseño de la subida de las imagenes |
-| 8302cca963135c6859949ee6302a043f51f09ac2   | Jul 08, 2021 | Se añadió los moqups del perfil de usuario |
-| 40f1e3079809cf9eea6944523e0c3d8deaff703c   | Jul 08, 2021 | Se añadieron los moqups para el layout de borrar imagenes y reportes |
+# Solo para evaluación - Se pidio que se borrara
