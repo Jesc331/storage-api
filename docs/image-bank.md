@@ -504,30 +504,30 @@ Se piensa que tenga los colores que contrasten con el logo que represente la API
 
 <img src="https://github.com/Jesc331/storage-api/blob/master/storage/images_resources/login_layout.png" width="480px">
 
----
 **Para la página de inicio se plantea lo siguiente:**
   
 Se plantea que se observen las imágenes de otros usuarios en el inicio como una especie de vista previa, y en la parte de arriba una barra de búsqueda, para hacer una búsqueda específica y arriba de la barra de búsqueda en el parte superior derecho un hipervínculo al perfil del usuario. Esta página debe de ser capaz de realizar consultas y ejecutar funciones para obtener imágenes específicas y subir nuevas imágenes.
   
 <img src="https://github.com/Jesc331/storage-api/blob/master/storage/images_resources/home_layout.png" width="480px">
----
+
 **Para la página de subir imágenes se plantea lo siguiente:**
   
 Al momento de hacer clic en el botón de subir imágenes, que se presenta en el inicio de la API se abrirá esta página, donde podremos rellenar la información que se requiere para subir una imagen y en caso de que no se cumplan los requisitos, salte un error por parte del usuario, se plantea que se despliegue el explorador de archivos al momento que se trate de seleccionar la imagen específica y que se seleccionen las categorías.
 
 <img src="https://github.com/Jesc331/storage-api/blob/master/storage/images_resources/uploaded_layout.png" width="480px">
----
+  
 **Para la página de reportes:**
 
   Para poder acceder a este apartado primero deberá de hacer clic en el atajo del perfil que están en la página inicial, y ahí en la página del perfil podrás ver el botón de crear reportes, donde se podrá visualizar 3 cuadros de textos, una para escribir el usuario, el ID de la imagen y un reporte de retroalimentación y el botón de enviar en caso de que falte alguna información salte un error por parte del usuario, además el usuario podrá ver el estatus de otros reportes suyos en caso de que tenga otros más. 
 
  <img src="https://github.com/Jesc331/storage-api/blob/master/storage/images_resources/reports_layout.png" width="480px"> 
----
+
+
 **Para la página de crear usuarios:**
 
 Para crear un usuario en nuestra API tendremos que acceder primero a la página del login y hacer clic en el botón de registro y que te mandara  a una página donde encontraras tres campos de texto que se deberán de llenar correctamente y en caso de que falte alguna información salte un error, asi como si el usuario se repite con uno ya registrado se saltara un error y se le dará un menaje al usuario de que por favor cambie el usuario y por ultimo si la contraseña no cumple con ciertas reglas que salte otro error y dándole un mensaje al usuario de que mejore la seguridad de la contraseña.
   
 <img src="https://github.com/Jesc331/storage-api/blob/master/storage/images_resources/login_register_layour.png" width="480px">
----
+ 
 # Historial de Commits
 # Solo para evaluación - Se pidio que se borrara
