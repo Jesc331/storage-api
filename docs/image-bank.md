@@ -483,51 +483,91 @@ Con -X especificamos el metodo
 Se especifica solo la ruta de "imagebank/image/pcitures y despues algun image_id como por ejemplo "001" o una fecha como "2021-08-02 o alguna extension de las permitidas como: jpg, jpeg, png o gif. Para obtener los datos de esa imagen  en especifico.
 ---
 # Planeación del FrontEnd
-Con esto se plantea llevar a cabo el desarrollo del frontend de nuestra API, para que tenga una vista más agradable con el usuario y se pueda utilizar sin problemas, pero antes de empezar con el desarrollo se tendrá que tomar en cuenta los siguientes puntos y que se cumplan sin omitir ninguno de ellos:
-  
-- El servidor debe poder procesar las consultas para GET, UPDATE, POST y DELETE de las siguientes variables dentro de la API: usuarios, reportes, imágenes y cometarios.
-- Que el inicio de sesión de la página funcione correctamente además de que se asignes los permisos correspondientes.
-- Que las validaciones para subir imágenes o archivos con formatos incorrectos estén funcionando para evitar archivos incorrectos en el servidor.
+Con esto se plantea llevar a cabo el desarrollo del frontend de nuestra API,
+para que tenga una vista más agradable con el usuario y se pueda utilizar sin
+problemas, pero antes de empezar con el desarrollo se tendrá que tomar en cuenta
+ los siguientes puntos y que se cumplan sin omitir ninguno de ellos:
+
+- El servidor debe poder procesar las consultas para GET, UPDATE, POST y DELETE
+de las siguientes variables dentro de la API: usuarios, reportes, imágenes y cometarios.
+- Que el inicio de sesión de la página funcione correctamente además de que se
+asignes los permisos correspondientes.
+- Que las validaciones para subir imágenes o archivos con formatos incorrectos
+estén funcionando para evitar archivos incorrectos en el servidor.
 - Que las validaciones para que no haya usuarios duplicados estén funcionando correctamente.
 
-Sin los puntos mencionados la API funcionará, pero no como se espera, lo cual generará errores y mantenimientos constantes a la aplicación lo cual sería un gasto innecesario de horas de trabajo, aclarado esto empezare a mencionar lo que se plantea desarrollar para este proyecto.
-  
-Se deberá crear una página web funcional con base de archivos HTML y Javascript, para poder utilizar las funciones que se ha desarrollado y que tenga conexión con nuestro servidor, asi mismo agregar estilo a la página web por medio de un lenguaje de diseño como CSS, esto es la base de nuestros frontend. 
+Sin los puntos mencionados la API funcionará, pero no como se espera, lo cual
+generará errores y mantenimientos constantes a la aplicación lo cual sería un
+gasto innecesario de horas de trabajo, aclarado esto empezare a mencionar lo que
+se plantea desarrollar para este proyecto.
+
+Se deberá crear una página web funcional con base de archivos HTML y Javascript,
+para poder utilizar las funciones que se ha desarrollado y que tenga conexión
+con nuestro servidor, asi mismo agregar estilo a la página web por medio de un
+lenguaje de diseño como CSS, esto es la base de nuestros frontend.
 
 ---
-  
+
 **Para el login se plantea lo siguiente:**
 
-Que se presenten dos campos de textos en los que vayan a escribirse las credenciales del usuario que son “usuario” y “contraseña”, y con un botón debajo para poder acceder en la API una vez escrita tu información, además de otro botón para “registrarse” si es que no tienes un usuario valido.
-  
-Se piensa que tenga los colores que contrasten con el logo que represente la API además de que el logo aparezca en la esquina inferior derecha junto con el nombre de la API, esto aún no está definido, pero es un detalle que se planea en un futuro.
+Que se presenten dos campos de textos en los que vayan a escribirse las credenciales
+del usuario que son “usuario” y “contraseña”, y con un botón debajo para poder
+acceder en la API una vez escrita tu información, además de otro botón para
+“registrarse” si es que no tienes un usuario valido.
+
+Se piensa que tenga los colores que contrasten con el logo que represente la API
+además de que el logo aparezca en la esquina inferior derecha junto con el nombre
+de la API, esto aún no está definido, pero es un detalle que se planea en un futuro.
 
 <img src="https://github.com/Jesc331/storage-api/blob/master/storage/images_resources/login_layout.png" width="480px">
 
 **Para la página de inicio se plantea lo siguiente:**
-  
-Se plantea que se observen las imágenes de otros usuarios en el inicio como una especie de vista previa, y en la parte de arriba una barra de búsqueda, para hacer una búsqueda específica y arriba de la barra de búsqueda en el parte superior derecho un hipervínculo al perfil del usuario. Esta página debe de ser capaz de realizar consultas y ejecutar funciones para obtener imágenes específicas y subir nuevas imágenes.
-  
+
+Se plantea que se observen las imágenes de otros usuarios en el inicio como una
+especie de vista previa, y en la parte de arriba una barra de búsqueda, para
+hacer una búsqueda específica y arriba de la barra de búsqueda en el parte
+superior derecho un hipervínculo al perfil del usuario. Esta página debe de ser
+capaz de realizar consultas y ejecutar funciones para obtener imágenes
+específicas y subir nuevas imágenes.
+
 <img src="https://github.com/Jesc331/storage-api/blob/master/storage/images_resources/home_layout.png" width="480px">
 
 **Para la página de subir imágenes se plantea lo siguiente:**
-  
-Al momento de hacer clic en el botón de subir imágenes, que se presenta en el inicio de la API se abrirá esta página, donde podremos rellenar la información que se requiere para subir una imagen y en caso de que no se cumplan los requisitos, salte un error por parte del usuario, se plantea que se despliegue el explorador de archivos al momento que se trate de seleccionar la imagen específica y que se seleccionen las categorías.
+
+Al momento de hacer clic en el botón de subir imágenes, que se presenta
+en el inicio de la API se abrirá esta página, donde podremos rellenar la información
+que se requiere para subir una imagen y en caso de que no se cumplan los requisitos,
+salte un error por parte del usuario, se plantea que se despliegue el explorador
+de archivos al momento que se trate de seleccionar la imagen específica y que se
+seleccionen las categorías.
 
 <img src="https://github.com/Jesc331/storage-api/blob/master/storage/images_resources/uploaded_layout.png" width="480px">
-  
+
 **Para la página de reportes:**
 
-  Para poder acceder a este apartado primero deberá de hacer clic en el atajo del perfil que están en la página inicial, y ahí en la página del perfil podrás ver el botón de crear reportes, donde se podrá visualizar 3 cuadros de textos, una para escribir el usuario, el ID de la imagen y un reporte de retroalimentación y el botón de enviar en caso de que falte alguna información salte un error por parte del usuario, además el usuario podrá ver el estatus de otros reportes suyos en caso de que tenga otros más. 
+  Para poder acceder a este apartado primero deberá de hacer clic en el atajo
+  del perfil que están en la página inicial, y ahí en la página del perfil podrás
+  ver el botón de crear reportes, donde se podrá visualizar 3 cuadros de textos,
+  una para escribir el usuario, el ID de la imagen y un reporte de retroalimentación
+  y el botón de enviar en caso de que falte alguna información salte un error
+  por parte del usuario, además el usuario podrá ver el estatus de otros reportes
+  suyos en caso de que tenga otros más.
 
- <img src="https://github.com/Jesc331/storage-api/blob/master/storage/images_resources/reports_layout.png" width="480px"> 
+ <img src="https://github.com/Jesc331/storage-api/blob/master/storage/images_resources/reports_layout.png" width="480px">
 
 
 **Para la página de crear usuarios:**
 
-Para crear un usuario en nuestra API tendremos que acceder primero a la página del login y hacer clic en el botón de registro y que te mandara  a una página donde encontraras tres campos de texto que se deberán de llenar correctamente y en caso de que falte alguna información salte un error, asi como si el usuario se repite con uno ya registrado se saltara un error y se le dará un menaje al usuario de que por favor cambie el usuario y por ultimo si la contraseña no cumple con ciertas reglas que salte otro error y dándole un mensaje al usuario de que mejore la seguridad de la contraseña.
-  
+Para crear un usuario en nuestra API tendremos que acceder primero a la página
+del login y hacer clic en el botón de registro y que te mandara  a una página
+donde encontraras tres campos de texto que se deberán de llenar correctamente y
+en caso de que falte alguna información salte un error, asi como si el usuario
+se repite con uno ya registrado se saltara un error y se le dará un menaje al
+usuario de que por favor cambie el usuario y por ultimo si la contraseña no cumple 
+con ciertas reglas que salte otro error y dándole un mensaje al usuario de que
+mejore la seguridad de la contraseña.
+
 <img src="https://github.com/Jesc331/storage-api/blob/master/storage/images_resources/login_register_layour.png" width="480px">
- 
+
 # Historial de Commits
 # Solo para evaluación - Se pidio que se borrara
