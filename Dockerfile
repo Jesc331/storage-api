@@ -3,6 +3,7 @@ WORKDIR /app
 COPY . .
 RUN pip install pipenv 
 RUN pipenv install --system --deploy --ignore-pipfile
-
-#WORKDIR /app/src
+RUN useradd -U -u 1000 appuser && \
+    chown -R 1000:1000 /app
+USER 1000
 CMD ["python", "main.py"]
